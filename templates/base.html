@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="d-flex flex-column h-100 main-bg"></body>
+<body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
 
@@ -46,23 +46,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact Us</a>
                     </li>
-                    <!-- {% if user.is_authenticated %} -->
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="#">Logout</a>
                     </li>
-                    <!-- {% else %} -->
+                    {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="#">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Login</a>
                     </li>
-                    <!-- {% endif %} -->
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
 
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+    </main>
 
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-black">Made by André Zeitz</p>
