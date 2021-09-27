@@ -2,15 +2,15 @@
 {% load static %}
 {% block content %}
 <div class="container hero">
-        <div class="row">
-            <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
-                <h1>Exceptional Dentist Service affordable for everyone.</h1>
-                <p> At our Dentist Center
-                    we combine world class medicine
-                    with compassionate care. </p>
-                    <a href="#" class="btn btn-light btn-lg action-button" type="button">Book an appointment</a>
-            </div>
+    <div class="row">
+        <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+            <h1>Exceptional Dentist Service affordable for everyone.</h1>
+            <p> At our Dentist Center
+                we combine world class medicine
+                with compassionate care. </p>
+                <a href="{% url 'appointment' %}" class="btn btn-light btn-lg action-button" type="button">Book an appointment</a>
         </div>
+    </div>
 </div>
 
 
