@@ -27,3 +27,79 @@ footer {
 .hero {
     margin-top: 10rem;
 }
+
+/* header text for each site */
+
+.top-header {
+    width: 100%;
+    height: 130px;
+    background-color: white;
+}
+
+.header-text {
+    padding-top: 3rem;
+    justify-content: center;
+    display: flex;
+    text-transform: uppercase;
+}
+
+/* appointment form */
+
+.card {
+    padding: 30px 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: none;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+}
+
+.blue-text {
+    color: #00BCD4
+}
+
+.form-control-label {
+    margin-bottom: 0
+}
+
+input,
+textarea,
+select,
+button  {
+    padding: 5px 12px;
+    border-radius: 5px ;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 18px ;
+    font-weight: 300
+    }
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none ;
+    -webkit-box-shadow: none ;
+    box-shadow: none ;
+    border: 1px solid #00BCD4;
+    outline-width: 0;
+    font-weight: 400
+}
+
+.btn-block {
+    text-transform: uppercase;
+    font-size: 15px ;
+    font-weight: 400;
+    height: 43px;
+    cursor: pointer;
+}
+
+.btn-block:hover {
+    color: #fff;
+}
+
+button:focus {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline-width: 0
+}
+

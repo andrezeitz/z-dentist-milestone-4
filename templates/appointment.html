@@ -2,60 +2,64 @@
 {% load static %}
 {% block content %}
 
-    {% if messages %}
-    <div class="card notification-card notification-invitation">
-        <div class="card-body">
-        {% for message in messages %}
-                <div class="card-title">{{message}} </div>
+<!-- Header text-->
+<div class="top-header">
+    <h2 class="header-text">
+        Book your dentist appointment
+    </h2>
+</div>
+
+<!-- Success message -->
+{% if messages %}
+    <div class="alert alert-success" role="alert">
+        <div>
+            {% for message in messages %}
+                    <div> {{message}} </div>
             {% endfor %}
         </div>
-    </div> 
-    {% endif %}
+    </div>
+{% endif %}
 
-    <!-- Appointment form -->
+
+<!-- Appointment form -->
     
-    <div class="container-fluid px-1 py-5 mx-auto">
-        <div class="row d-flex justify-content-center">
-            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                <h3>
-                    Book your dentist appointment
-                </h3>
-                <p class="blue-text">Use the following form to contact us and request an appointment..</p>
-                <div class="card">
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <div class="card">
                     
-                    <form class="form-card" method="POST" action="{% url 'appointment' %}">
+                <form class="form-card" method="POST" action="{% url 'appointment' %}">
                     {% csrf_token %}
                         <div class="row justify-content-between text-left">
+                            <!-- First Name -->
                             <div class="form-group col-sm-6 flex-column d-flex"> 
-                            <label class="form-control-label px-3">First name<span class="text-danger"> *</span>
-                            </label> 
-                            <input required type="text" id="fname" name="fname" placeholder="Enter your first name" onblur="validate(1)"> 
-                        </div>
-
-                        <div class="form-group col-sm-6 flex-column d-flex"> 
-                            <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label> 
-                            <input required type="text" id="lname" name="lname" placeholder="Enter your last name" onblur="validate(2)"> 
-                        </div>
-
+                                <label class="form-control-label px-3">First name<span class="text-danger"> *</span>
+                                </label> 
+                                <input required type="text" id="fname" name="fname" placeholder="Your First Name" onblur="validate(1)"> 
+                            </div>
+                            <!-- Last Name -->    
+                            <div class="form-group col-sm-6 flex-column d-flex"> 
+                                <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label> 
+                                <input required type="text" id="lname" name="lname" placeholder="Your Last Name" onblur="validate(2)"> 
+                            </div>
                         </div>
 
                         <div class="row justify-content-between text-left">
-
+                            <!-- Email -->    
                             <div class="form-group col-sm-6 flex-column d-flex"> 
                                 <label class="form-control-label px-3">Email<span class="text-danger"> *</span>
                                 </label> 
-                                <input type="text" id="email" name="email" placeholder="" onblur="validate(3)"> 
+                                <input type="text" id="email" name="email" placeholder="Your Email" onblur="validate(3)"> 
                             </div>
-
+                            <!-- Mobile -->
                             <div class="form-group col-sm-6 flex-column d-flex"> 
-                             <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label> 
-                              <input type="text" id="mob" name="mobile" placeholder="" onblur="validate(4)"> 
+                                <label class="form-control-label px-3">Phone Number<span class="text-danger"> *</span></label> 
+                                <input type="text" id="mob" name="mobile" placeholder="Your Phone" onblur="validate(4)"> 
                             </div>
-
                         </div>
                         
                         <div class="row justify-content-between text-left">
-
+                            <!-- Threatment -->
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label class="form-control-label px-3" class="form-label">Select your treatment<span class="text-danger"> *</span></label>
                                 <select id="disabledSelect" class="form-select" name="treatment">
@@ -66,31 +70,27 @@
                                   <option>Braces: 2400€</option>
                                 </select>
                             </div>
-
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3">Date<span class="text-danger"> *</span></label>
-                                <div class="form-group"> <input class="form-control" type="date" name="datetime" required></div>
+                                <!-- Date -->
+                                <label class="form-control-label px-3">Desired date<span class="text-danger"> *</span></label>
+                                <div class="form-group"> <input class="form-control" id="date" type="date" name="datetime" required></div>
                             </div>
                         </div>
-
-                        
 
                         <div class="row justify-content-between text-left">
+                            <!-- Information -->
                             <div class="form-group col-12 flex-column d-flex"> 
                                 <label class="form-control-label px-3">Additional information</label> 
-                                <textarea type="text" id="ans" name="information" placeholder="" onblur="validate(6)"></textarea> 
+                                <textarea type="text" id="ans" name="information" placeholder="Your Message" onblur="validate(7)"></textarea> 
                             </div>
                         </div>
-                        <div class="row justify-content-end">
-                            <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Submit</button> </div>
+                        <div class="row justify-content-center">
+                            <!-- Submit Button -->
+                            <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Booking now</button> </div>
                         </div>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-
-
-
-
+</div>
 {% endblock %}

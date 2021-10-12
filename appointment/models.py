@@ -3,10 +3,11 @@ from django.http import request
 
 
 TREATMENT_CHOICES = (
-    ('Tartar removal: 50€','TARTAR REMOVAL: 50€'),
+    ('Basic survey: 100€', 'BASIC SURVEY: 100€'),
+    ('Tartar removal: 50€', 'TARTAR REMOVAL: 50€'),
     ('Teeth whitening: 250€', 'TEETH WHITENING: 250€'),
-    ('Tooth removal: 150€','TOOTH REMOVAL: 150€'),
-    ('Braces: 2400€','BRACES: 2400€'),
+    ('Tooth removal: 150€', 'TOOTH REMOVAL: 150€'),
+    ('Braces: 2400€', 'BRACES: 2400€'),
 )
 
 
@@ -15,7 +16,7 @@ class Appointment(models.Model):
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
     phone = models.CharField(max_length=50)
-    treatment = models.CharField(max_length=30, choices=TREATMENT_CHOICES, default='Tartar removal: 50€')
+    treatment = models.CharField(max_length=30, choices=TREATMENT_CHOICES, default='Basic survey: 100€')
     datetime = models.DateField(auto_now_add=False, null=True, blank=True)
     information = models.TextField(blank=True)
     sent_date = models.DateField(auto_now_add=True)
