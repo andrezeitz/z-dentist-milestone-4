@@ -118,3 +118,36 @@ button:focus {
 .google-maps {
     padding: 20px 0 20px 0;
 }
+
+/* Pricing Page */
+
+.dento-pricing-table-area {
+    position: relative;
+    z-index: 1;
+    margin-top: 5rem;
+}
+  
+.dento-price-table {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    color: black;
+}
+
+table thead tr > td,
+table thead tr > th {
+    background-color: #00BCD4 !important;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+table tr > td,
+table tr > th {
+    padding: 12px 30px !important;
+    border-radius: 3px;
+    border: 2px solid lightgrey;
+    background-color: grey;
+    font-weight: 300;
+    color: black;
+}

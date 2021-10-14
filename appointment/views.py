@@ -58,3 +58,7 @@ class ContactUsTemplateView(TemplateView):
         )
         email.send()
         return HttpResponseRedirect(request.path)
+
+
+class PriceTemplateView(TemplateView):
+    template_name = 'price.html'
