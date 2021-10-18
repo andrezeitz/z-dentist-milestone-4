@@ -14,7 +14,7 @@
 
 <div class="container">
     <div class="row">
-        {% for app in appointment %}
+        {% for app in appointments %}
             <div class="col-lg-4">
                 <div class="card card-margin">
                     <div class="card-header no-border">
@@ -38,7 +38,7 @@
                             </div>
                             <div class="info-wrapper">
                                 <div class="info">
-                                    <span>{{app.request}}</span>
+                                    <span>{{app.information}}</span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -56,7 +56,7 @@
 
 
 
-        <div class="col-lg-4">
+        <!-- <div class="col-lg-4">
             <div class="card card-margin">
                 <div class="card-header no-border">
                     <h4 class="card-title">Patrik Petersson</h4>
@@ -90,7 +90,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>       
 {% endblock %}

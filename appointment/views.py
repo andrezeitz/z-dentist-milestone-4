@@ -5,8 +5,8 @@ from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.contrib import messages
 from django.conf import settings
+from django.views.generic import ListView
 from .models import Appointment
-
 
 
 class HomeTemplateView(TemplateView):
@@ -14,6 +14,9 @@ class HomeTemplateView(TemplateView):
 
 
 class AppointmentTemplateView(TemplateView):
+    """
+    A view that renders a template.
+    """
     template_name = 'appointment.html'
 
     def post(self, request):
@@ -66,5 +69,15 @@ class PriceTemplateView(TemplateView):
 
 class ManageAppointmentTemplateView(TemplateView):
     template_name = 'manage_appointments.html'
+    model = Appointment
     login_required = True
-    
+    paginate_by = 3
+
+    def get_context_data(self,*args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        appointments = Appointment.objects.all()
+        context.update({
+            "appointments":appointments,
+            "title":"Manage Appointments"
+        })
+        return context
