@@ -1,11 +1,11 @@
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from django.core.mail import EmailMessage
-from .models import Appointment
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.contrib import messages
 from django.conf import settings
+from .models import Appointment
 
 
 
@@ -62,3 +62,9 @@ class ContactUsTemplateView(TemplateView):
 
 class PriceTemplateView(TemplateView):
     template_name = 'price.html'
+
+
+class ManageAppointmentTemplateView(TemplateView):
+    template_name = 'manage_appointments.html'
+    login_required = True
+    

@@ -151,3 +151,56 @@ table tr > th {
     font-weight: 300;
     color: black;
 }
+
+/* Manage Appointment Card  */
+
+.card-margin {
+    margin-bottom: 1 rem;
+}
+
+.card {
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #e6e4e9;
+    border-radius: 8px;
+}
+
+.card .card-header.no-border {
+    border: 0;
+}
+.card .card-header {
+    background: none;
+    padding: 0 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+}
+
+.title-wrapper {
+    margin-bottom: 1rem;
+}
+
+.date-threatment {
+    font-size: 15px;
+}
+
+.info-wrapper {
+    margin: 1rem 0 1.5rem 0;
+}
+
+.form-group {
+    text-align: center;
+}
