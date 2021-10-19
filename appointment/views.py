@@ -10,12 +10,17 @@ from .models import Appointment
 
 
 class HomeTemplateView(TemplateView):
+    """
+    A view that renders the index template
+    """
     template_name = 'index.html'
 
 
 class AppointmentTemplateView(TemplateView):
     """
-    A view that renders a template.
+    A view that renders a template and also save all appointment information
+    to the database.
+    It will also show a success message to the user after complete the form
     """
     template_name = 'appointment.html'
 
@@ -40,11 +45,14 @@ class AppointmentTemplateView(TemplateView):
 
         appointment.save()
 
-        messages.add_message(request, messages.SUCCESS, f'Thanks {fname} for the booking.')
+        messages.add_message(request, messages.SUCCESS, f'Thanks {fname} for the booking. We will confirm you appointment as soon as possible. ')
         return HttpResponseRedirect(request.path)
 
 
 class ContactUsTemplateView(TemplateView):
+    """
+    A view that renders a template and also let the customer email the company
+    """
     template_name = 'contact_us.html'
 
     def post(self, request):
@@ -64,20 +72,29 @@ class ContactUsTemplateView(TemplateView):
 
 
 class PriceTemplateView(TemplateView):
+    """
+    A view that renders the price template
+    """
     template_name = 'price.html'
 
 
 class ManageAppointmentTemplateView(TemplateView):
+    """
+    A view that renders a template and read the information from the database.
+    The appointment information will be shown in cards and the admin will be
+    able to accept the appointment
+    """
     template_name = 'manage_appointments.html'
     model = Appointment
     login_required = True
     paginate_by = 3
 
-    def get_context_data(self,*args, **kwargs):
+    def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         appointments = Appointment.objects.all()
         context.update({
-            "appointments":appointments,
-            "title":"Manage Appointments"
+            "appointments": appointments
         })
         return context
+
+

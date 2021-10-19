@@ -193,12 +193,17 @@ table tr > th {
     margin-bottom: 1rem;
 }
 
-.date-threatment {
+.contact-phone {
+    margin-bottom: 1rem;
+}
+
+.contact-treatment,
+.contact-date {
     font-size: 15px;
 }
 
-.info-wrapper {
-    margin: 1rem 0 1.5rem 0;
+.contact-info {
+    margin: 1rem 0 1rem 0;
 }
 
 .form-group {

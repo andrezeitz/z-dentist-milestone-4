@@ -3,11 +3,15 @@ from django.http import request
 
 
 TREATMENT_CHOICES = (
-    ('Basic survey: 100€', 'BASIC SURVEY: 100€'),
-    ('Tartar removal: 50€', 'TARTAR REMOVAL: 50€'),
-    ('Teeth whitening: 250€', 'TEETH WHITENING: 250€'),
-    ('Tooth removal: 150€', 'TOOTH REMOVAL: 150€'),
-    ('Braces: 2400€', 'BRACES: 2400€'),
+    ('Basic dentist Survey: 100€', 'BASIC DENTIST SURVEY: 100€'),
+    ('Teeth whitening Service: 300€', 'TEETH WHITENING SERVICE: 300€'),
+    ('Ceramic crowns and fillings: 100€', 'CERAMIC CROWNS AND FILLINGS: 100€'),
+    ('Remove crowns, bridges Service: 50€', 'REMOVE CROWNS, BRIDGES SERVICE: 50€'),
+    ('Overlay teeth whitening: 170€', 'OVERLAY TEETH WHITENING: 170€'),
+    ('Make Braces: 2400€', 'MAKE BRACES: 2400€'),
+    ('Covering the recession of the gums: 400€', 'COVERING THE RECESSION OF THE GUMS: 400€'),
+    ('Removal of tooth: 150€', 'REMOVAL OF TOOTH: 150€'),
+    ('Removal of tartar: 50€', 'REMOVAL OF TARTAR: 50€'),
 )
 
 
@@ -16,7 +20,7 @@ class Appointment(models.Model):
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
     phone = models.CharField(max_length=50)
-    treatment = models.CharField(max_length=30, choices=TREATMENT_CHOICES, default='Basic survey: 100€')
+    treatment = models.CharField(max_length=100, choices=TREATMENT_CHOICES, default='Basic dentist survey: 100€')
     datetime = models.DateField(auto_now_add=False, null=True, blank=True)
     information = models.TextField(blank=True)
     sent_date = models.DateField(auto_now_add=True)

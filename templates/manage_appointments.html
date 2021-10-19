@@ -22,21 +22,21 @@
                     </div>
                     <div class="card-body pt-0">
                         <div class="card-contact">
-                            <div class="title-wrapper">
-                                <div class="contact-info">
-                                    <span>{{app.email}}</span>
-                                    <span>{{app.phone}}</span>
-                                </div>
+                            <div class="contact-email">
+                                <span>{{app.email}}</span>
+                            </div>    
+                            <div class="contact-phone">
+                                <span>{{app.phone}}</span>
                             </div>
-                            <div class="">
-                                <div class="date-threatment">
-                                    <strong>Desire Date:</strong>
-                                    <span>{{app.date}}</span>
-                                    <strong>Threatment:</strong>
-                                    <span>{{app.threatment}}</span>
-                                </div>
+                            <div class="contact-date">
+                                <strong>Date:</strong>
+                                <span>{{app.datetime}}</span>
+                            </div>    
+                            <div class="contact-treatment">
+                                <strong>Treatment:</strong>
+                                <span>{{app.treatment}}</span>
                             </div>
-                            <div class="info-wrapper">
+                            <div class="contact-info">
                                 <div class="info">
                                     <span>{{app.information}}</span>
                                 </div>
@@ -52,45 +52,6 @@
                 </div>
             </div>
         {% endfor %}
-
-
-
-
-        <!-- <div class="col-lg-4">
-            <div class="card card-margin">
-                <div class="card-header no-border">
-                    <h4 class="card-title">Patrik Petersson</h4>
-                </div>
-                <div class="card-body pt-0">
-                    <div class="card-contact">
-                        <div class="title-wrapper">
-                            <div class="contact-info">
-                                <span>sasa@hotmail.com</span>
-                                <span>0703928397</span>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="date-threatment">
-                                <strong>Desire Date:</strong>
-                                <span>23/12/2021</span>
-                                <strong>Threatment:</strong>
-                                <span>White Teeth</span>
-                            </div>
-                        </div>
-                        <div class="info-wrapper">
-                            <div class="info">
-                                <span>I would like to have a good doctor</span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <h6>Confirm Appointment</h6>
-                            <input type="datetime-local" name="datetime" class="form-control mb-2">
-                            <input class="btn-block btn-primary form-control" type="submit" value="Accept">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>       
 {% endblock %}
