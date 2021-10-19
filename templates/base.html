@@ -34,29 +34,29 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'price' %}">Pricing</a>
+                        <a class="nav-link" href="{% url 'price' %}">PRICING</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'appointment' %}">Appointment</a>
+                        <a class="nav-link" href="{% url 'appointment' %}">APPOINTMENT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+                        <a class="nav-link" href="{% url 'contact_us' %}">CONTACT US</a>
                     </li>
                     {% if request.user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'manage_appointments' %}">Manage</a>
+                        <a class="nav-link" href="{% url 'manage_appointments' %}">MANAGE</a>
                     </li>
                     {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
+    
 
     <main class="flex-shrink-0 main-bg">
-        <img class="hero-picture" src="https://res.cloudinary.com/dkof8rxt4/image/upload/v1632824093/vecteezy_close-up-of-dental-orthodontic-doctor_1226532_sftxml.jpg">
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
