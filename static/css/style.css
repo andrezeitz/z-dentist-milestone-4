@@ -15,7 +15,6 @@
 }
 
 .navbar {
-    background: white;
     height: 4rem;
 }
 
@@ -23,14 +22,25 @@
     font-weight: 600;
 }
 
-.navbar-links li:hover {
-    background-color: #b80f0a
+.navbar-brand {
+    font-size: 22px;
+    font-weight: 600;
+    color: #0d6efd !important;
+    margin-left: 5px;
+    border: 2px solid #0d6efd;
+    border-radius: 8px;
+    padding: 5px;
 }
 
 /* Collapse Navbar */
 .container-fluid {
     z-index: 1;
     background: white;
+    font-size: 18px;
+}
+
+#navbarText {
+    margin-left: 15px;
 }
 
 /* Footer */
