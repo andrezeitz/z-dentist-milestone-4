@@ -56,13 +56,45 @@
     </nav>
     
 
-    <main class="flex-shrink-0 main-bg">
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
-    </main>
+<main class="flex-shrink-0 main-bg">
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
+</main>
 
-
+<footer>
+    <div class="container">
+        <div class="row">
+          <!-- Single Footer Widget -->
+            <div class="col-12 col-sm-6">
+                <div class="contact-title">
+                    <h5 class="adress-title">Contact</h5>
+                </div>    
+                <ul class="footer-contact">
+                    <li><span>10 West Elm, London</span></li>
+                    <li><span>60610 United Kingdom</span></li>
+                    <li><span> 111 222 3333</span></li>
+                    <li><span> zdentist@gmail.com</span></li>
+                </ul>
+            </div>    
+            <!-- Single Footer Widget -->
+            <div class="col-12 col-sm-6">
+                <div class="contact-title">
+                    <!-- Widget Title -->
+                    <h5 class="opening-title">Opening Hours</h5>
+                </div>            
+                <!-- Opening Hours -->
+                <ul class="footer-contact">
+                    <li><strong><span>Mon-Fri</span></strong> <span>8.00-18.00</span></li>
+                    <li><strong><span>Sat</span></strong> <span>9.00-17.00</span></li>
+                    <li><strong><span>Sun</span></strong> <span>10.00-17.00</span></li>
+                    <li><span>Holiday</span> <span>Closed</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>    
+</footer>
+    
 </body>
 
 </html>

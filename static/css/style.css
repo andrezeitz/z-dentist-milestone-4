@@ -23,9 +23,38 @@
     font-weight: 600;
 }
 
+.navbar-links li:hover {
+    background-color: #b80f0a
+}
+
+/* Collapse Navbar */
+.container-fluid {
+    z-index: 1;
+    background: white;
+}
+
+/* Footer */
+
 footer {
-    background: transparent;
-    flex-shrink: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-top: 2px solid grey;
+}
+
+.contact-title {
+    padding: 15px 0 5px 0;
+    align-items: center;
+    color: #0d6efd;
+}
+
+ul {
+    list-style-type: none;
+    padding-right: 2rem;
 }
 
 .hero {
@@ -66,7 +95,7 @@ footer {
 
 .card {
     padding: 30px 40px;
-    margin-top: 60px;
+    margin-top: 30px;
     margin-bottom: 60px;
     border: none;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
@@ -125,12 +154,14 @@ button:focus {
 /* Contact Page */
 
 .contact-information {
-    background-color: white;
+    background-color: #0d6efd;
+    color: white;
     padding: 30px;
+    border-radius: 8px;
 }
 
 .contact-form {
-    padding: 35px;
+    padding: 30px;
     background-color: white;
 }
 
