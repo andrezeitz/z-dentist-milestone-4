@@ -1,4 +1,6 @@
 from django.http.response import HttpResponseRedirect
+from django.views.generic import View
+from django.shortcuts import redirect
 from django.shortcuts import render
 from django.core.mail import EmailMessage
 from django.http import HttpResponse
@@ -45,30 +47,30 @@ class AppointmentTemplateView(TemplateView):
 
         appointment.save()
 
-        messages.add_message(request, messages.SUCCESS, f'Thanks {fname} for the booking. We will confirm you appointment as soon as possible. ')
+        messages.add_message(request, messages.SUCCESS, f'Thank you {fname} for the booking. We will confirm you appointment as soon as possible. ')
         return HttpResponseRedirect(request.path)
 
 
-class ContactUsTemplateView(TemplateView):
+class TemplateEmail(View):
     """
     A view that renders a template and also let the customer email the company
     """
-    template_name = 'contact_us.html'
+    # template_name = 'contact_us.html'
 
-    def post(self, request):
-        name = request.POST.get('message-name')
-        email = request.POST.get('message-email')
-        message = request.POST.get('message')
+    # def post(self, request):
+    #     name = request.POST.get('message-name')
+    #     email = request.POST.get('message-email')
+    #     message = request.POST.get('message')
 
-        email = EmailMessage(
-            subject=f"{name} from Dentist Z.",
-            body=message,
-            from_email=settings.EMAIL_HOST_USER,
-            to=[settings.EMAIL_HOST_USER],
-            reply_to=[email]
-        )
-        email.send()
-        return HttpResponseRedirect(request.path)
+    #     email = EmailMessage(
+    #         subject=f"{name} from Dentist Z.",
+    #         body=message,
+    #         from_email=settings.EMAIL_HOST_USER,
+    #         to=[settings.EMAIL_HOST_USER],
+    #         reply_to=[email]
+    #     )
+    #     email.send()
+    #     return HttpResponseRedirect(request.path)
 
 
 class PriceTemplateView(TemplateView):

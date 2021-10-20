@@ -8,6 +8,16 @@
   <div class="header-text">CONTACT US</div>
 </div>
 
+{% if messages %}
+    <div class="alert alert-success" role="alert">
+        <div>
+            {% for message in messages %}
+                    <div> {{message}} </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
 <section class="dento-contact-area mt-50 mb-100">
     <div class="container">
         <div class="row">
@@ -38,7 +48,8 @@
                 <div class="line"></div>
             </div>
             <!-- Form -->
-            <form action="{% url 'contact_us' %}" method="POST">
+            <!-- <form action="{% url 'contact_us' %}" method="POST"> -->
+            <form id="contact-form" action="{% url 'send_email' %}" role="form">    
               {% csrf_token %}
               <div class="row">
                   <div class="col-lg-6">

@@ -1,7 +1,14 @@
 from django.contrib import admin
 from django.urls import path, include
 
+from django.views.generic import TemplateView
+from emailer import views
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('appointment.urls')),
+
+    path('contact-us/', TemplateView.as_view(template_name='contact_us.html'), name='contact_us'),
+    path('send-form-email/', views.SendFormEmail.as_view(), name='send_email'),
 ]
