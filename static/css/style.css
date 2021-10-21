@@ -287,3 +287,19 @@ table tr > th {
 .form-group {
     text-align: center;
 }
+
+/* Pagination */
+
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    background-color: #fff;
+    
+}

@@ -51,28 +51,6 @@ class AppointmentTemplateView(TemplateView):
         return HttpResponseRedirect(request.path)
 
 
-class TemplateEmail(View):
-    """
-    A view that renders a template and also let the customer email the company
-    """
-    # template_name = 'contact_us.html'
-
-    # def post(self, request):
-    #     name = request.POST.get('message-name')
-    #     email = request.POST.get('message-email')
-    #     message = request.POST.get('message')
-
-    #     email = EmailMessage(
-    #         subject=f"{name} from Dentist Z.",
-    #         body=message,
-    #         from_email=settings.EMAIL_HOST_USER,
-    #         to=[settings.EMAIL_HOST_USER],
-    #         reply_to=[email]
-    #     )
-    #     email.send()
-    #     return HttpResponseRedirect(request.path)
-
-
 class PriceTemplateView(TemplateView):
     """
     A view that renders the price template
@@ -80,7 +58,7 @@ class PriceTemplateView(TemplateView):
     template_name = 'price.html'
 
 
-class ManageAppointmentTemplateView(TemplateView):
+class ManageAppointmentTemplateView(ListView):
     """
     A view that renders a template and read the information from the database.
     The appointment information will be shown in cards and the admin will be
@@ -88,15 +66,8 @@ class ManageAppointmentTemplateView(TemplateView):
     """
     template_name = 'manage_appointments.html'
     model = Appointment
+    context_object_name = "appointments"
     login_required = True
-    paginate_by = 3
+    paginate_by = 6
 
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        appointments = Appointment.objects.all()
-        context.update({
-            "appointments": appointments
-        })
-        return context
-
-
+    
