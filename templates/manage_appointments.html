@@ -39,7 +39,7 @@
                                 <span>{{app.phone}}</span>
                             </div>
                             <div class="contact-date">
-                                <strong>Date:</strong>
+                                <strong>Desire Date:</strong>
                                 <span>{{app.datetime}}</span>
                             </div>    
                             <div class="contact-treatment">
@@ -62,10 +62,10 @@
                                     {% endif %}
                                     {% if app.accepted %}
                                     <div class="confirmation">
-                                        <h4>Appointment set</h4>
+                                        <h6>Appointment Accepted</h6>
                                         <p>{{app.accepted_date}}</p>                            
                                     </div>
-                                    <input class="btn btn-success" type="submit" value="CONFIRMED">
+                                    <input class="btn btn-success" value="CONFIRMED">
                                     {% endif %}
                                 </div>
                             </form>
