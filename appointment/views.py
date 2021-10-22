@@ -6,8 +6,10 @@ from django.core.mail import EmailMessage
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.contrib import messages
-from django.conf import settings
 from django.views.generic import ListView
+from django.template import Context
+from django.template.loader import render_to_string, get_template
+import datetime
 from .models import Appointment
 
 
@@ -32,7 +34,7 @@ class AppointmentTemplateView(TemplateView):
         email = request.POST.get('email')
         mobile = request.POST.get('mobile')
         treatment = request.POST.get('treatment')
-        datetime = request.POST.get('datetime')
+        date_time = request.POST.get('datetime')
         information = request.POST.get('information')
 
         appointment = Appointment.objects.create(
@@ -41,7 +43,7 @@ class AppointmentTemplateView(TemplateView):
             email=email,
             phone=mobile,
             treatment=treatment,
-            datetime=datetime,
+            datetime=date_time,
             information=information
         )
 
@@ -62,7 +64,7 @@ class ManageAppointmentTemplateView(ListView):
     """
     A view that renders a template and read the information from the database.
     The appointment information will be shown in cards and the admin will be
-    able to accept the appointment
+    able to accept the appointment. Pagination of 6 cards per each side.
     """
     template_name = 'manage_appointments.html'
     model = Appointment
@@ -70,4 +72,13 @@ class ManageAppointmentTemplateView(ListView):
     login_required = True
     paginate_by = 6
 
-    
+    def post(self, request):
+        accepted_date = request.POST.get('confirm-date')
+        appointment_id = request.POST.get('appointment-id')
+        appointment = Appointment.objects.get(id=appointment_id)
+        appointment.accepted = True
+        appointment.accepted_date = accepted_date
+        appointment.save()
+
+        messages.add_message(request, messages.SUCCESS, f"Appointment accepted {accepted_date} for patient.")
+        return HttpResponseRedirect(request.path)

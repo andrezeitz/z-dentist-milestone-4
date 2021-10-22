@@ -8,6 +8,17 @@
     <div class="header-text">MANAGE APPOINTMENTS</div>
 </div>
 
+<!-- Success message -->
+{% if messages %}
+    <div class="alert alert-success" role="alert">
+        <div>
+            {% for message in messages %}
+                    <div> {{message}} </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
 <!-- Manage Appointment Card  -->
 
 
@@ -40,12 +51,24 @@
                                     <span>{{app.information}}</span>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <h6>Confirm Appointment</h6>
-                                <input type="datetime-local" name="datetime" class="form-control mb-2">
-                                    <!-- <input hidden="true" name="appointment-id" value="{{app.id}}"> -->
-                                <input class="btn-block btn-primary form-control" type="submit" value="Accept">
-                            </div>
+                            <form class="form-accept" method="POST" action="{% url 'manage_appointments' %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    {% if app.accepted == False %}
+                                    <h6>Confirm Appointment</h6>
+                                    <input type="datetime-local" name="confirm-date" class="form-control mb-2">
+                                        <input hidden="true" name="appointment-id" value="{{app.id}}">
+                                    <input class="btn-block btn-primary form-control" type="submit" value="Accept">
+                                    {% endif %}
+                                    {% if app.accepted %}
+                                    <div class="confirmation">
+                                        <h4>Appointment set</h4>
+                                        <p>{{app.accepted_date}}</p>                            
+                                    </div>
+                                    <input class="btn btn-success" type="submit" value="CONFIRMED">
+                                    {% endif %}
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
