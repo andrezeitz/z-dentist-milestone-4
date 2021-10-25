@@ -1,24 +1,38 @@
-/* Bottom margin for main contaxt */
-
-
 
 /* Hero Picture index */
 
 .hero-picture {
     width: 100%;
-    height: 800px;
+    height: 650px;
+    opacity: 0.6;
 }
 
 .hero-container {
     position: relative;
+    background-color: black;
+    border-bottom: solid black 4px;
+}
+
+.hero-container h1 {
+    font-weight: 400;
+    color: #0d6efd;
 }
 
 .hero-header {
     position: absolute;
-    top: 10%;
-    left: 40%;
+    top: 50%;
+    left: 75%;
     transform: translate(-50%, -50%);
-    color: white;
+    border: 4px solid black;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.btn-home {
+    padding: 1rem;
+    font-size: 17px;
+    border: solid 1px black;
 }
 
 .black-color {
@@ -31,7 +45,7 @@
 
 .navbar {
     height: 4rem;
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid black;
 }
 
 .navbar-nav {
@@ -67,9 +81,6 @@
 /* Footer */
 
 footer {
-    /* position: absolute;
-    left: 0;
-    bottom: 0; */
     width: 100%;
     background-color: white;
     color: black;
@@ -78,7 +89,6 @@ footer {
 }
 
 .contact-title {
-    /* padding: 15px 0 5px 0; */
     align-items: center;
     color: #0d6efd;
     padding-top: 1rem;
@@ -186,6 +196,7 @@ button:focus {
 
 .contact-information {
     background-color: #0d6efd;
+    border: 2px solid black;
     color: white;
     padding: 30px;
     border-radius: 8px;
@@ -306,3 +317,41 @@ table tr > th {
     background-color: #fff;
     
 }
+
+/* About us */
+
+.about-header {
+    padding: 1rem 0 0.5rem 0;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.about-topic {
+    padding: 0.5rem 0 0.5rem 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+.about-section .counter {
+    padding: 22px 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+    margin: 1rem 0 1rem 0;
+}
+
+.about-section .counter .count {
+    font-weight: 700;
+    color: #0d6efd;
+    margin: 0 0 5px;
+}
+
+.about-section .counter p {
+    font-weight: 600;
+    margin: 0;
+}
+
+
+

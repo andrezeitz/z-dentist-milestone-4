@@ -1,14 +1,13 @@
 from django.http.response import HttpResponseRedirect
 from django.views.generic import View
-from django.shortcuts import redirect
-from django.shortcuts import render
-from django.core.mail import EmailMessage
-from django.http import HttpResponse
+# from django.shortcuts import redirect
+# from django.shortcuts import render
+# from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.contrib import messages
 from django.views.generic import ListView
-from django.template import Context
-from django.template.loader import render_to_string, get_template
+# from django.template import Context
+# from django.template.loader import render_to_string, get_template
 import datetime
 from django.core.mail import send_mail
 from .models import Appointment
@@ -94,5 +93,5 @@ class ManageAppointmentTemplateView(ListView):
             [appointment.email]
         )
 
-        messages.add_message(request, messages.SUCCESS, f"Appointment accepted {appointment.accepted_date} for {appointment.first_name}.")
+        messages.add_message(request, messages.SUCCESS, f"Appointment accepted {appointment.accepted_date} for {appointment.first_name} {appointment.last_name}.")
         return HttpResponseRedirect(request.path)

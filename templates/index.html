@@ -1,19 +1,61 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="black-color"></div>
 <div class="hero-container">
-    <img class="hero-picture" src="https://res.cloudinary.com/dkof8rxt4/image/upload/v1634722211/dental-2036941_960_720_akqass.jpg">
+    <img class="hero-picture" src="https://res.cloudinary.com/dkof8rxt4/image/upload/v1632823116/vecteezy_dental-health-concept-flatlay_2873478_zozwfr.jpg">
     <div class="hero-header">
-        <h1>Exceptional Dentist Service affordable for everyone.</h1>
-        <p> We recognize that all of our patients are unique and deserve to receive dental care that reflects their individual needs.
-            We will take a good care of you and your family! New Patients are always welcome at Z Dentist.
-            Our team is happy to answer any questions you may have concerning your dental health and first dentist visit. </p>
-        <a href="{% url 'appointment' %}" class="btn btn-dark btn-lg action-button" type="button">Book an appointment</a>
+        <h1>Quality dental care with the right price</h1>
+        <p> Z Dentist is not your average dentist. Our unique offer combines the best dental care at the right price and always with your well being as our primary focus. </p>
+        <a href="{% url 'appointment' %}" class="btn btn-primary btn-home" type="button">Book an Appointment</a>
     </div>
 </div>       
 
 
+
+<!-- About us section -->
+<section class="section about-section gray-bg" id="about">
+    <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+            <h3 class="about-header">About Us</h3>
+            <div class="col-lg-6">
+                <h6 class="about-topic">We focus on quality</h6>
+                <p>Keeping the highest standard of quality is key in everything that we do. Our goal is to give you the best experience possible and lasting results. That means that we work with all the best and latest techniques and methods, it also means that we strive to deliver the highest quality in our interactions with our patients. And our commitment to quality does not only give you a better experience at our clinics, a reliable and qualitative treatment also saves you money in the long run.</p>
+            </div>
+            <div class="col-lg-6">
+                <h6 class="about-topic">Designed with your comfort</h6>
+                <p>All our dental clinics are designed with your comfort and well being in mind. They are equipped with the latest technology and are located in areas with good communications and have generous opening hours. The focus for our professional dentists is always on the patients and we want to provide an experience that is as enjoyable as possible and offer a treatment according to the patients’ needs and condition. All our dentists are experienced and speak English fluently.</p>
+            </div>
+        </div>
+        <div class="counter">
+            <div class="row">
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2">5000+</h6>
+                        <p class="m-0px font-w-600">Happy Clients</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2">15000+</h6>
+                        <p class="m-0px font-w-600">Appointments</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2">1500+</h6>
+                        <p class="m-0px font-w-600">Dental implants</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2">1200+</h6>
+                        <p class="m-0px font-w-600">Teeth Whitening </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 {% endblock %}
