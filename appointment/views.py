@@ -10,6 +10,7 @@ from django.views.generic import ListView
 from django.template import Context
 from django.template.loader import render_to_string, get_template
 import datetime
+from django.core.mail import send_mail
 from .models import Appointment
 
 
@@ -65,6 +66,7 @@ class ManageAppointmentTemplateView(ListView):
     A view that renders a template and read the information from the database.
     The appointment information will be shown in cards and the admin will be
     able to accept the appointment. Pagination of 6 cards per each side.
+    After accepting the appointment the customer will get a confirmation email.
     """
     template_name = 'manage_appointments.html'
     model = Appointment
@@ -73,12 +75,24 @@ class ManageAppointmentTemplateView(ListView):
     paginate_by = 6
 
     def post(self, request):
-        accepted_date = request.POST.get('confirm-date')
+        accepted_date = request.POST.get('confirm-date', None)
         appointment_id = request.POST.get('appointment-id')
         appointment = Appointment.objects.get(id=appointment_id)
         appointment.accepted = True
         appointment.accepted_date = accepted_date
         appointment.save()
+        
+        subject = 'Subject - Z Dentist Customer Service'
+        body = (f"Hello {appointment.first_name}, " +
+                f"your booking is confirmed on {appointment.accepted_date}")
+        
+        #Send Confirmation Mail
+        send_mail(
+            subject,
+            body,
+            'swe_zeitz@hotmail.com',
+            [appointment.email]
+        )
 
-        messages.add_message(request, messages.SUCCESS, f"Appointment accepted {accepted_date} for patient.")
+        messages.add_message(request, messages.SUCCESS, f"Appointment accepted {appointment.accepted_date} for {appointment.first_name}.")
         return HttpResponseRedirect(request.path)

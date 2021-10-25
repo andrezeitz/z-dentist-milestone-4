@@ -286,9 +286,10 @@ table tr > th {
     margin: 1rem 0 1rem 0;
 }
 
-/* .form-group {
-    text-align: center;
-} */
+.btn-success {
+    height: 43px !important;
+    width: 100% !important;
+}
 
 /* Pagination */
 
