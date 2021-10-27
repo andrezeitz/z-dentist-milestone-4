@@ -65,7 +65,7 @@ The colors chosen are:
 
 <img width="827" alt="coloruus" src="https://user-images.githubusercontent.com/85236391/138835210-20530ccc-21f9-4577-b707-32b788908f36.png">
 
-### WireframE
+### Wireframe
 
 #### Desktop
 ![WEB](https://user-images.githubusercontent.com/85236391/138857007-9be5dc7e-8d19-484e-9e75-9ae931427271.png)
@@ -127,11 +127,31 @@ The footer contains the opening hours and contact information about the company.
 1. As a user, I want to easily determine what kind of website it is.
 * Result: TEST PASSED
 
+2. As a user, I want to see what services and prices the dental clinic offers.
+* Result: TEST PASSED
+
+3. As a user, I want to be able to book an dentist appointment.
+* Result: TEST PASSED
+
+4. As a user, I want to know where the dental clinic is located.
+* Result: TEST PASSED
+
+5. As a user, I want to know the phone number to the dental clinic.
+* Result: TEST PASSED
+
+6. As a user, I want to get a email with my confirmed appointment time.
+* Result: TEST PASSED
+
+7. As a site admin, I want to be able to manage appointment
+* Result: TEST PASSED
+
+8. As a site admin, I want to be able to confirm appointment times and send out confirmation email to the customer.
+* Result: TEST PASSED
 
 ### Code Validation
+
 ### HTML
 The W3C Markup Validation Service was used to validate the HTML page of the project. No errors or warnings to show.
-
 
 ### CSS
 The W3C CSS Validation Service was used to validate the CSS file used for the project. No errors or warnings to show.
@@ -178,9 +198,10 @@ How to clone this repository.
 * Press Enter to create your local clone.
 
 ## Credits
-https://stackoverflow.com/questions/31130706/dropdown-in-django-model
-https://www.bootdey.com/snippets/view/events-card-widget
-https://sandeepsajan0.medium.com/send-email-in-django-app-with-sendgrid-a009bf19a389
-https://docs.djangoproject.com/en/3.2/topics/pagination/
+* I learnd how to make dropdown menus in Models from this page [Stackoverflow](https://stackoverflow.com/questions/31130706/dropdown-in-django-model)
+* I use code from this card widget [Bootdey](https://www.bootdey.com/snippets/view/events-card-widget)
+* I learned how to send emails with django from this website [Blog](https://sandeepsajan0.medium.com/send-email-in-django-app-with-sendgrid-a009bf19a389)
+* I use django docs to understand more about sending emails [Django Docs](https://docs.djangoproject.com/en/3.2/topics/email/)
+* I use django docs to understand more about how pagination works [Django Docs](https://docs.djangoproject.com/en/3.2/topics/pagination/)
 
 
