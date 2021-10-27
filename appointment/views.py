@@ -1,23 +1,10 @@
 from django.http.response import HttpResponseRedirect
 from django.views.generic import View
-# from django.shortcuts import redirect
-# from django.shortcuts import render
-# from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.contrib import messages
 from django.views.generic import ListView
-# from django.template import Context
-# from django.template.loader import render_to_string, get_template
-import datetime
 from django.core.mail import send_mail
 from .models import Appointment
-
-
-class HomeTemplateView(TemplateView):
-    """
-    A view that renders the index template
-    """
-    template_name = 'index.html'
 
 
 class AppointmentTemplateView(TemplateView):
@@ -53,13 +40,6 @@ class AppointmentTemplateView(TemplateView):
         return HttpResponseRedirect(request.path)
 
 
-class PriceTemplateView(TemplateView):
-    """
-    A view that renders the price template
-    """
-    template_name = 'price.html'
-
-
 class ManageAppointmentTemplateView(ListView):
     """
     A view that renders a template and read the information from the database.
@@ -85,7 +65,7 @@ class ManageAppointmentTemplateView(ListView):
         body = (f"Hello {appointment.first_name}, " +
                 f"your booking is confirmed on {appointment.accepted_date}")
         
-        #Send Confirmation Mail
+        # Send Confirmation Mail
         send_mail(
             subject,
             body,

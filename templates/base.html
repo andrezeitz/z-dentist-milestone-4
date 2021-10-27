@@ -4,7 +4,7 @@
 <html class="h-100">
 
 <head>
-    <title>{{title}}</title>
+    <title>Z Dentist</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -48,16 +48,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'appointment' %}">Book now</a>
                     </li>
-                    {% if request.user.is_authenticated %}
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'manage_appointments' %}">Manage</a>
                     </li>
-                    {% endif %}
+                    
                 </ul>
             </div>
         </div>
     </nav>
-    
+<!-- {% if request.user.is_authenticated %} -->
+<!-- {% endif %} -->
 
 <main class="flex-shrink-0 main-bg">
     {% block content %}
