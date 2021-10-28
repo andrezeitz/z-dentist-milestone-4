@@ -1,5 +1,4 @@
-
-/* Hero Picture index */
+/* Hero Picture  */
 
 .hero-picture {
     width: 100%;
@@ -10,7 +9,7 @@
 .hero-container {
     position: relative;
     background-color: black;
-    border-bottom: solid black 3px;
+    border-bottom: solid black 1px;
 }
 
 .hero-container h1 {
@@ -45,7 +44,7 @@
 
 .navbar {
     height: 4rem;
-    border-bottom: 3px solid black;
+    border-bottom: 1px solid black;
     align-items: center;
 }
 
