@@ -32,33 +32,37 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mr-auto">
+                    {% url 'home' as url %}
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link {% if request.path == url %}active{% endif %}" aria-current="page" href="{{ url }}">Home</a>
                     </li>
+                    {% url 'home' as url %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">About us</a>
+                        <a class="nav-link" href="{{ url }}#about">About us</a>
                     </li>
+                    {% url 'services' as url %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'services' %}">Services</a>
+                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Services</a>
                     </li>
+                    {% url 'contact_us' as url %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact_us' %}">Contact</a>
+                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Contact</a>
                     </li>
+                    {% url 'appointment' as url %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'appointment' %}">Book now</a>
+                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Book now</a>
                     </li>
-                    
+                    {% if request.user.is_authenticated %}
+                    {% url 'manage_appointments' as url %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'manage_appointments' %}">Manage</a>
+                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Manage</a>
                     </li>
-                    
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
-<!-- {% if request.user.is_authenticated %} -->
-<!-- {% endif %} -->
 
 <main class="flex-shrink-0 main-bg">
     {% block content %}

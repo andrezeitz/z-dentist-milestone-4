@@ -6,13 +6,15 @@
     opacity: 0.9;
 }
 
+/* Hero Container */
+
 .hero-container {
     position: relative;
     background-color: black;
     border-bottom: solid black 1px;
 }
 
-.hero-container h1 {
+.hero-container h2 {
     font-weight: 400;
     color: #0d6efd;
 }
@@ -63,12 +65,11 @@
 }
 
 .nav-link {
-    color: #0d6efd !important;
     font-weight: 500;
 }
 
 .nav-link:hover {
-    color: black !important;
+    color: black  !important;
 }
 
 .bg-light {
@@ -108,7 +109,7 @@ ul {
     margin-top: 10rem;
 }
 
-/* header text for each site */
+/* Header text for each page */
 
 .header-picture {
     width: 100%;
@@ -136,7 +137,6 @@ ul {
     font-weight: 600;
     text-shadow: 1px 1px black;
 }
-
 
 /* Appointment Form */
 
@@ -184,6 +184,7 @@ textarea:focus {
     font-weight: 400;
     height: 43px;
     cursor: pointer;
+    margin-top: 1rem;
 }
 
 .btn-block:hover {
@@ -218,11 +219,11 @@ button:focus {
     margin-bottom: 1rem;
 }
 
-/* Pricing Page */
+/* Services Page */
 
 .dento-pricing-table-area {
     position: relative;
-    margin: 7rem 0 7rem 0;
+    margin: 4rem 0 4rem 0;
     border-radius: 2px;
 }
 
@@ -344,7 +345,7 @@ table tr > th {
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
-    margin: 1rem 0 1rem 0;
+    margin: 1rem 0 2rem 0;
 }
 
 .about-section .counter .count {
@@ -360,3 +361,41 @@ table tr > th {
 
 
 
+@media (max-width:750px) {
+    .hero-header {
+        left: 50%;
+    }
+
+    .count-data {
+        margin: 5px 0 5px 0;
+    }
+
+    .dento-pricing-table-area {
+        margin: 3rem 0 3rem 0;
+    }
+
+    .contact-form {
+        margin-bottom: 0;
+    }
+
+    .contact-title {
+        padding-top: 0.5rem;
+    }
+
+    .card-margin {
+        margin-bottom: 10px;
+    }
+
+    .hero-picture {
+        height: 500px;
+    }
+
+    .header-picture {
+        height: 180px;
+    }
+
+    table tr > td,
+    table tr > th {
+        padding: 10px 10px !important;
+    }
+}

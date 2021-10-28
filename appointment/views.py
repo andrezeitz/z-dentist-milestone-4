@@ -61,7 +61,7 @@ class ManageAppointmentTemplateView(ListView):
         appointment.accepted_date = accepted_date
         appointment.save()
         
-        subject = 'Subject - Z Dentist Customer Service'
+        subject = 'Z Dentist Customer Service'
         body = (f"Hello {appointment.first_name}, " +
                 f"your booking is confirmed on {appointment.accepted_date}")
         

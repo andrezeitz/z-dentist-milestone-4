@@ -15,7 +15,7 @@ class SendFormEmail(View):
 
         # Send Email
         send_mail(
-            'Subject - Z Dentist Customer Service',
+            'Z Dentist Customer Service',
             'Hello ' + name + ',\n' + message,
             'swe_zeitz@hotmail.com',
             [
