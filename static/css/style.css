@@ -142,17 +142,18 @@ ul {
 
 .appointment-card {
     padding: 30px 40px;
-    margin-top: 3rem;
+    margin: 3rem 0 2rem 0;
     border: none;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
 }
 
-.blue-text {
-    color: #00BCD4
+.form-control-label {
+    margin: 5px 0 3px 0;
 }
 
-.form-control-label {
-    margin-bottom: 0
+.text-center h6 {
+    font-weight: 600;
+    color: #0d6efd;
 }
 
 input,
@@ -185,17 +186,6 @@ textarea:focus {
     height: 43px;
     cursor: pointer;
     margin-top: 1rem;
-}
-
-.btn-block:hover {
-    color: #fff;
-}
-
-button:focus {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    outline-width: 0
 }
 
 /* Contact Page */
@@ -359,7 +349,7 @@ table tr > th {
     margin: 0;
 }
 
-
+/* Media Quries for Mobile */
 
 @media (max-width:750px) {
     .hero-header {
@@ -384,6 +374,10 @@ table tr > th {
 
     .card-margin {
         margin-bottom: 10px;
+    }
+
+    .appointment-card {
+        margin: 2rem 0 0 0;
     }
 
     .hero-picture {
