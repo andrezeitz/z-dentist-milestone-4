@@ -19,6 +19,7 @@
     </div>
 {% endif %}
 
+
 <!-- Manage Appointment Card  -->
 
 
@@ -64,10 +65,13 @@
                                     {% endif %}
                                     {% if app.accepted %}
                                     <div class="confirmation">
-                                        <h6>Appointment Accepted</h6>
+                                        <h6>Confirmed Appointment Date</h6>
                                         <p>{{app.accepted_date}}</p>                            
                                     </div>
-                                    <input class="btn btn-success" value="CONFIRMED">
+                                    <div>
+                                        <input class="btn btn-success" value="CONFIRMED">
+                                        <a href="{% url 'delete-appointment' app.id %}" class="btn btn-danger">DELETE</a>
+                                    </div>
                                     {% endif %}
                                 </div>
                             </form>

@@ -4,6 +4,7 @@ from django.views.generic.base import TemplateView
 from django.contrib import messages
 from django.views.generic import ListView
 from django.core.mail import send_mail
+from django.shortcuts import get_list_or_404, redirect, reverse
 from .models import Appointment
 
 
@@ -58,6 +59,7 @@ class ManageAppointmentTemplateView(ListView):
         appointment_id = request.POST.get('appointment-id')
         appointment = Appointment.objects.get(id=appointment_id)
         appointment.accepted = True
+        appointment.edit = True
         appointment.accepted_date = accepted_date
         appointment.save()
         
@@ -75,3 +77,10 @@ class ManageAppointmentTemplateView(ListView):
 
         messages.add_message(request, messages.SUCCESS, f"Appointment accepted {appointment.accepted_date} for {appointment.first_name} {appointment.last_name}.")
         return HttpResponseRedirect(request.path)
+
+def delete_appointment(request, appointment_id):
+    appointment = Appointment.objects.get(id=appointment_id)
+    appointment.delete()
+
+    messages.add_message(request, messages.SUCCESS, "Appointment was deleted from the database.")
+    return redirect(reverse('manage_appointments'))
