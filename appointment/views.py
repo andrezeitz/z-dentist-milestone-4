@@ -57,9 +57,10 @@ class ManageAppointmentTemplateView(ListView):
     def post(self, request):
         accepted_date = request.POST.get('confirm-date', None)
         appointment_id = request.POST.get('appointment-id')
+        print(appointment_id)
         appointment = Appointment.objects.get(id=appointment_id)
         appointment.accepted = True
-        appointment.edit = True
+        appointment.edited = True
         appointment.accepted_date = accepted_date
         appointment.save()
         
@@ -77,6 +78,7 @@ class ManageAppointmentTemplateView(ListView):
 
         messages.add_message(request, messages.SUCCESS, f"Appointment accepted {appointment.accepted_date} for {appointment.first_name} {appointment.last_name}.")
         return HttpResponseRedirect(request.path)
+
 
 def delete_appointment(request, appointment_id):
     appointment = Appointment.objects.get(id=appointment_id)
