@@ -384,6 +384,11 @@ table tr > th {
 }
 
 /* Media Quries for Mobile */
+@media (max-width:991px) {
+    .navbar-user {
+        position: inherit;
+    }
+}    
 
 @media (max-width:750px) {
     .hero-header {
