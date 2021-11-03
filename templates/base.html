@@ -58,10 +58,6 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Manage</a>
                     </li>
-                    {% url 'account_logout' as url %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Logout</a>
-                    </li>
                     {% else %}
                     {% url 'account_signup' as url %}
                     <li class="nav-item">
@@ -71,12 +67,26 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Login</a>
                     </li>
-                    {% url 'login_admin' as url %}
+                    {% url 'admin:login' as url %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Admin</a>
                     </li>
                     {% endif %}
                 </ul>
+                {% if request.user.is_authenticated %}
+                <div class="navbar-user">
+                    <span class="text-muted">
+                        <i class="far fa-user"></i> {{user}}
+                    </span>
+                    <ul class="navbar-nav mr-auto">
+                        {% url 'account_logout' as url %}
+                        <li class="nav-item">
+                            <a class="nav-link navbar-logout {% if request.path == url %}active{% endif %}" href="{{ url }}"><i class="fas fa-sign-out-alt"></i></a>
+                        </li>
+                    </ul>
+                </div>    
+                  
+                {% endif %}
             </div>
         </div>
     </nav>
