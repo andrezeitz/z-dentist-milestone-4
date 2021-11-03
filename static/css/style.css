@@ -1,3 +1,14 @@
+html, body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-bg {
+    flex: 1 0 auto;
+  }
+ 
 /* Hero Picture  */
 
 .hero-picture {
@@ -95,8 +106,6 @@
     font-size: 21px;
 }
 
-
-
 .fa-sign-out-alt {
     font-size: 21px;
 }
@@ -120,11 +129,13 @@
 /* Footer */
 
 footer {
+    flex-shrink: 0;
     width: 100%;
     background-color: white;
     color: black;
     text-align: center;
     border-top: 2px solid black;
+    margin-bottom: 2px;
 }
 
 .contact-title {
@@ -387,6 +398,10 @@ table tr > th {
 @media (max-width:991px) {
     .navbar-user {
         position: inherit;
+    }
+
+    .navbar-logout {
+        margin-top: 3px;
     }
 }    
 
