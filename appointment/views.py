@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.views.generic import ListView
 from django.core.mail import send_mail
 from django.shortcuts import get_list_or_404, redirect, reverse
+from django.contrib.auth.decorators import login_required
 from .models import Appointment
 
 
