@@ -52,6 +52,7 @@ class ManageAppointmentTemplateView(ListView):
     """
     template_name = 'manage_appointments.html'
 
+    # Protect page to only logged in users
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
@@ -84,6 +85,17 @@ class ManageAppointmentTemplateView(ListView):
         )
 
         messages.add_message(request, messages.SUCCESS, f"Appointment accepted {appointment.accepted_date} for {appointment.first_name} {appointment.last_name}.")
+        return HttpResponseRedirect(request.path)
+
+
+class UserAppointmentListView(ListView):
+    template_name = 'manage-appointment/appointment_by_user.html'
+
+    def get_queryset(self, request):
+        appointment_id = request.POST.get('appointment-id')
+        appointment = Appointment.objects.get(id=appointment_id)
+        
+        self.appointment_id = get_list_or_404(Appointment, name=self.kwargs[appointment_id])
         return HttpResponseRedirect(request.path)
 
 

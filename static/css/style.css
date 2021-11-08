@@ -87,6 +87,12 @@ html, body {
     background-color: white !important;
 }
 
+.navbar-login {
+    position: absolute;
+    right: 0%;
+    padding-right: 5px;
+}
+
 .navbar-user {
     position: absolute;
     right: 1%;
