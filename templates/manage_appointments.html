@@ -56,12 +56,14 @@
                                 {% csrf_token %}
                                 <div class="form-group">
                                     {% if app.accepted == False %}
+                                    {% if request.user.is_superuser %}
                                     <h6>Confirm Appointment</h6>
                                     <input type="datetime-local" name="confirm-date" class="form-control mb-2">
                                         <input hidden="true" name="appointment-id" value="{{app.id}}">
                                         <input hidden="true" name="email" value="{{app.email}}">
                                         <input hidden="true" name="fname" value="{{app.fname}}">
                                     <input class="btn-block btn-primary form-control" type="submit" value="Accept">
+                                    {% endif %}
                                     {% endif %}
                                     {% if app.accepted %}
                                     <div class="confirmation">

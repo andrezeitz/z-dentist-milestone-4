@@ -34,7 +34,8 @@ class AppointmentTemplateView(TemplateView):
             phone=mobile,
             treatment=treatment,
             datetime=date_time,
-            information=information
+            information=information,
+            user=request.user,
         )
 
         appointment.save()
@@ -61,6 +62,13 @@ class ManageAppointmentTemplateView(ListView):
     context_object_name = "appointments"
     paginate_by = 6
 
+    # Show appointment for only the user
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return Appointment.objects.all()
+        else:
+            return Appointment.objects.filter(user=self.request.user)
+
     def post(self, request):
         accepted_date = request.POST.get('confirm-date', None)
         appointment_id = request.POST.get('appointment-id')
@@ -84,18 +92,8 @@ class ManageAppointmentTemplateView(ListView):
             [appointment.email, 'swe_zeitz@hotmail.com'] # CC to admin email
         )
 
+        list(messages.get_messages(request))
         messages.add_message(request, messages.SUCCESS, f"Appointment accepted {appointment.accepted_date} for {appointment.first_name} {appointment.last_name}.")
-        return HttpResponseRedirect(request.path)
-
-
-class UserAppointmentListView(ListView):
-    template_name = 'manage-appointment/appointment_by_user.html'
-
-    def get_queryset(self, request):
-        appointment_id = request.POST.get('appointment-id')
-        appointment = Appointment.objects.get(id=appointment_id)
-        
-        self.appointment_id = get_list_or_404(Appointment, name=self.kwargs[appointment_id])
         return HttpResponseRedirect(request.path)
 
 

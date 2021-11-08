@@ -1,5 +1,6 @@
 from django.db import models
 from django.http import request
+from django.contrib.auth.models import User
 
 
 TREATMENT_CHOICES = (
@@ -27,6 +28,7 @@ class Appointment(models.Model):
     accepted = models.BooleanField(default=False)
     edited = models.BooleanField(default=False)
     accepted_date = models.DateTimeField(auto_now=False, null=True, auto_now_add=False,)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.first_name
