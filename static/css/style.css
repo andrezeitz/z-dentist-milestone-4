@@ -406,10 +406,6 @@ table tr > th {
 }    
 
 @media (max-width:750px) {
-    .hero-header {
-        left: 50%;
-    }
-
     .count-data {
         margin: 5px 0 5px 0;
     }
@@ -445,5 +441,33 @@ table tr > th {
     table tr > td,
     table tr > th {
         padding: 10px 10px !important;
+    }
+}
+
+@media (max-width:570px) {
+    .hero-picture {
+        height: 400px;
+    }
+
+    .hero-container {
+        border-bottom: 0;
+    }
+
+    .hero-header {
+        position: inherit;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        border: 0;
+        border-radius: 0px;
+        padding: 0px 10px 0 10px;
+        text-align: center;
+    }
+
+    .hero-header h2 {
+        font-size: 35px;
+        padding: 1rem 0 0.2rem 0;
+        font-weight: 600;
+        color: black;
     }
 }

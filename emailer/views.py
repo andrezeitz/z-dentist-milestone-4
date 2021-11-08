@@ -16,10 +16,10 @@ class SendFormEmail(View):
         # Send Email
         send_mail(
             'Z Dentist Customer Service',
-            'Hello ' + name + ',\n' + message,
+            'Hello ' + name + ', this was your message to us' ',\n' + message,
             'swe_zeitz@hotmail.com',
             [
-                email,
+                email, 'swe_zeitz@hotmail.com' #CC to admin mail
             ]
         )
 

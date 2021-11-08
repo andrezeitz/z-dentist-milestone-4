@@ -6,6 +6,7 @@ from django.views.generic import ListView
 from django.core.mail import send_mail
 from django.shortcuts import get_list_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from .models import Appointment
 
 
@@ -50,15 +51,18 @@ class ManageAppointmentTemplateView(ListView):
     After accepting the appointment the customer will get a confirmation email.
     """
     template_name = 'manage_appointments.html'
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     model = Appointment
     context_object_name = "appointments"
-    login_required = True
     paginate_by = 6
 
     def post(self, request):
         accepted_date = request.POST.get('confirm-date', None)
         appointment_id = request.POST.get('appointment-id')
-        print(appointment_id)
         appointment = Appointment.objects.get(id=appointment_id)
         appointment.accepted = True
         appointment.edited = True
@@ -66,15 +70,17 @@ class ManageAppointmentTemplateView(ListView):
         appointment.save()
         
         subject = 'Z Dentist Customer Service'
-        body = (f"Hello {appointment.first_name}, " +
-                f"your booking is confirmed on {appointment.accepted_date}")
+        body = (
+            f"Hello {appointment.first_name}, " +
+            f"your booking is confirmed on {appointment.accepted_date}"
+        )
         
-        # Send Confirmation Mail
+        # Send Confirmation Mail to user and CC to admin
         send_mail(
             subject,
             body,
             'swe_zeitz@hotmail.com',
-            [appointment.email]
+            [appointment.email, 'swe_zeitz@hotmail.com'] # CC to admin email
         )
 
         messages.add_message(request, messages.SUCCESS, f"Appointment accepted {appointment.accepted_date} for {appointment.first_name} {appointment.last_name}.")
@@ -82,8 +88,26 @@ class ManageAppointmentTemplateView(ListView):
 
 
 def delete_appointment(request, appointment_id):
+    """
+    Function that let you delete an appointment. After deletion is made a
+    confirmation email is send to the user and admin.
+    """
     appointment = Appointment.objects.get(id=appointment_id)
     appointment.delete()
+
+    subject = 'Z Dentist Customer Service'
+    body = (
+        f"Hello {appointment.first_name}, " +
+        f"your booking on {appointment.accepted_date} is now canceled."
+    )
+        
+    # Send Confirmation Mail to user and CC to admin
+    send_mail(
+        subject,
+        body,
+        'swe_zeitz@hotmail.com',
+        [appointment.email, 'swe_zeitz@hotmail.com'] 
+    )
 
     messages.add_message(request, messages.SUCCESS, "Appointment was deleted from the database.")
     return redirect(reverse('manage_appointments'))
