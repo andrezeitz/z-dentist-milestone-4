@@ -164,6 +164,7 @@ ul {
 .header-picture {
     width: 100%;
     height: 260px;
+    border-bottom: 1px solid black;
 }
 
 .header {
@@ -174,7 +175,7 @@ ul {
 }
 
 .header-picture {
-    opacity: 0.3;
+    opacity: 0.8;
 }
 
 .header-text {
@@ -203,7 +204,7 @@ ul {
 
 .text-center h6 {
     font-weight: 600;
-    color: #0d6efd;
+    
 }
 
 input,
@@ -343,10 +344,25 @@ table tr > th {
     margin: 1rem 0 1rem 0;
 }
 
-.btn-success,
+.btn-success {
+    width: 49%;
+    padding: 4px;
+    cursor: default;
+}
+
 .btn-danger {
     width: 49%;
-    padding: 4px
+    padding: 4px;
+}
+
+.user-info1 {
+    margin-top: 1rem;
+    font-size: 12px;
+}
+
+.user-info2 {
+    margin-bottom: 0;
+    font-size: 12px;
 }
 
 /* Pagination */

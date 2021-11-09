@@ -89,10 +89,9 @@ class ManageAppointmentTemplateView(ListView):
             subject,
             body,
             'swe_zeitz@hotmail.com',
-            [appointment.email, 'swe_zeitz@hotmail.com'] # CC to admin email
+            [appointment.email, 'swe_zeitz@hotmail.com']
         )
 
-        list(messages.get_messages(request))
         messages.add_message(request, messages.SUCCESS, f"Appointment accepted {appointment.accepted_date} for {appointment.first_name} {appointment.last_name}.")
         return HttpResponseRedirect(request.path)
 

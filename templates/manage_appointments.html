@@ -65,6 +65,13 @@
                                     <input class="btn-block btn-primary form-control" type="submit" value="Accept">
                                     {% endif %}
                                     {% endif %}
+                                    {% if request.user %}
+                                    {% if request.user.is_superuser == False %}
+                                    {% if app.accepted == False %}
+                                    <h6>Your booking will be confirmed as soon as possible..</h6>
+                                    {% endif %}
+                                    {% endif %}
+                                    {% endif %}
                                     {% if app.accepted %}
                                     <div class="confirmation">
                                         <h6>Confirmed Appointment Date</h6>
@@ -74,6 +81,12 @@
                                         <input class="btn btn-success" value="CONFIRMED">
                                         <a href="{% url 'delete-appointment' app.id %}" class="btn btn-danger">DELETE</a>
                                     </div>
+                                    {% if request.user %}
+                                    {% if request.user.is_superuser == False %}
+                                    <p class="user-info1">* If you would like to change your booking please cancel it then apply for a new appointment.</p>
+                                    <p class="user-info2">* Please be aware you will need to cancel 24 hours prior to your appointment to not be charged.</p>
+                                    {% endif %}
+                                    {% endif %}
                                     {% endif %}
                                 </div>
                             </form>
