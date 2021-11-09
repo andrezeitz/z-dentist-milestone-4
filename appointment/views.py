@@ -77,11 +77,15 @@ class ManageAppointmentTemplateView(ListView):
         appointment.edited = True
         appointment.accepted_date = accepted_date
         appointment.save()
+
+        #Split up the accepted_date to look better
+        date = accepted_date[0:10]
+        time = accepted_date[11:]
         
         subject = 'Z Dentist Customer Service'
         body = (
             f"Hello {appointment.first_name}, " +
-            f"your booking is confirmed on {appointment.accepted_date}"
+            f"your booking is confirmed on {date} {time}"
         )
         
         # Send Confirmation Mail to user and CC to admin
@@ -92,7 +96,7 @@ class ManageAppointmentTemplateView(ListView):
             [appointment.email, 'swe_zeitz@hotmail.com']
         )
 
-        messages.add_message(request, messages.SUCCESS, f"Appointment accepted {appointment.accepted_date} for {appointment.first_name} {appointment.last_name}.")
+        messages.add_message(request, messages.SUCCESS, f"Appointment accepted {date} {time} for {appointment.first_name} {appointment.last_name}.")
         return HttpResponseRedirect(request.path)
 
 
@@ -107,7 +111,7 @@ def delete_appointment(request, appointment_id):
     subject = 'Z Dentist Customer Service'
     body = (
         f"Hello {appointment.first_name}, " +
-        f"your booking on {appointment.accepted_date} is now canceled."
+        f"your booking on {date} {time} is now canceled."
     )
         
     # Send Confirmation Mail to user and CC to admin
