@@ -193,6 +193,15 @@ I use media quries to make everything look and feel good on mobile devices.
 
 * I had this problem when I tested to send email when the site was deployed to the Heroku platform it gave me an error that wasen't show in Gitpod. The issue was that I forgot to add the Secret API key from Send Grid in to the config on Heroku. After adding the key to the config vars the problem went away.
 
+<img width="660" alt="Skärmavbild 2021-10-28 kl  10 28 39" src="https://user-images.githubusercontent.com/85236391/140926748-d576da00-ff7d-48e9-89d1-41eb1fd59ee6.png">
+
+* When a user was going to make a second appointment they get a error message saying "IntegrityError". The reason was I had a onetoone relationship with the user and the appointment. So I changed the User model to a ForeignKey instead and get rid of the error right away.
+
+New:
+![Skärmavbild 2021-11-09 kl  13 04 34](https://user-images.githubusercontent.com/85236391/140921303-082c13bb-1c07-4036-954d-2f8afb6b417f.png)
+Old:
+![Skärmavbild 2021-11-09 kl  13 05 25](https://user-images.githubusercontent.com/85236391/140921310-1ae4f280-244c-45b4-abe7-c5d34dba752e.png)
+
 * My success messages was bugging when people was logging in and out. It was showing inside the "Manage" page even when that was only for the confirmation of appointments. I fixed it to delete the automatic messages Allauth send out when it's a successfull login/out to any page since I wasen't using it.
 
 ![Skärmavbild 2021-11-08 kl  12 53 44](https://user-images.githubusercontent.com/85236391/140918482-a06366fe-84e6-48b4-872d-d80e00bb99a2.png)
