@@ -197,10 +197,19 @@ I use media quries to make everything look and feel good on mobile devices.
 
 * When a user was going to make a second appointment they get a error message saying "IntegrityError". The reason was I had a onetoone relationship with the user and the appointment. So I changed the User model to a ForeignKey instead and get rid of the error right away.
 
-New:
+###### New:
 ![Skärmavbild 2021-11-09 kl  13 04 34](https://user-images.githubusercontent.com/85236391/140921303-082c13bb-1c07-4036-954d-2f8afb6b417f.png)
-Old:
+###### Old:
 ![Skärmavbild 2021-11-09 kl  13 05 25](https://user-images.githubusercontent.com/85236391/140921310-1ae4f280-244c-45b4-abe7-c5d34dba752e.png)
+
+* The datetime was not rendering correct from the model so I split it up to make it look better.
+##### Old:
+![Skärmavbild 2021-11-04 kl  12 41 42](https://user-images.githubusercontent.com/85236391/140941868-edf7654f-6e8b-4be8-a49e-9220ec22c639.png)
+##### New:
+![Skärmavbild 2021-11-09 kl  15 18 21](https://user-images.githubusercontent.com/85236391/140941883-56fa2e61-2c1b-42ef-b88f-f4e1802c0df2.png)
+##### Solution:
+![Skärmavbild 2021-11-09 kl  15 26 30](https://user-images.githubusercontent.com/85236391/140941993-09fefea0-177f-4048-b0ac-3226fb42b143.png)
+
 
 * My success messages was bugging when people was logging in and out. It was showing inside the "Manage" page even when that was only for the confirmation of appointments. I fixed it to delete the automatic messages Allauth send out when it's a successfull login/out to any page since I wasen't using it.
 
