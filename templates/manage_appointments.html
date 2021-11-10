@@ -19,9 +19,7 @@
     </div>
 {% endif %}
 
-
 <!-- Manage Appointment Card  -->
-
 
 <div class="container">
     <div class="row">
@@ -29,32 +27,40 @@
             <div class="col-lg-4">
                 <div class="card card-margin">
                     <div class="card-header no-border">
+                        <!-- Name  -->
                         <h4 class="card-title">{{app.first_name}} {{app.last_name}}</h4>
                     </div>
                     <div class="card-body pt-0">
                         <div class="card-contact">
+                            <!-- Email  -->
                             <div class="contact-email">
                                 <span>{{app.email}}</span>
-                            </div>    
+                            </div>
+                            <!-- Phone  -->    
                             <div class="contact-phone">
                                 <span>{{app.phone}}</span>
                             </div>
+                            <!-- Date  -->
                             <div class="contact-date">
                                 <strong>Desire Date:</strong>
                                 <span>{{app.datetime}}</span>
-                            </div>    
+                            </div>
+                            <!-- Treatment  -->   
                             <div class="contact-treatment">
                                 <strong>Treatment:</strong>
                                 <span>{{app.treatment}}</span>
                             </div>
+                            <!-- Info  -->
                             <div class="contact-info">
                                 <div class="info">
                                     <span>{{app.information}}</span>
                                 </div>
                             </div>
+                            <!-- Form card -->
                             <form class="form-accept" method="POST" action="{% url 'manage_appointments' %}">
                                 {% csrf_token %}
                                 <div class="form-group">
+                                    <!-- Info before appointment is accepted for Admin  -->
                                     {% if app.accepted == False %}
                                     {% if request.user.is_superuser %}
                                     <h6>Confirm Appointment</h6>
@@ -65,6 +71,7 @@
                                     <input class="btn-block btn-primary form-control" type="submit" value="Accept">
                                     {% endif %}
                                     {% endif %}
+                                    <!-- Info before appointment is accepted for User  -->
                                     {% if request.user %}
                                     {% if request.user.is_superuser == False %}
                                     {% if app.accepted == False %}
@@ -72,6 +79,7 @@
                                     {% endif %}
                                     {% endif %}
                                     {% endif %}
+                                    <!-- Confirm appointment date  -->
                                     {% if app.accepted %}
                                     <div class="confirmation">
                                         <h6>Confirmed Appointment Date</h6>
@@ -81,6 +89,7 @@
                                         <input class="btn btn-success" value="CONFIRMED">
                                         <a href="{% url 'delete-appointment' app.id %}" class="btn btn-danger">DELETE</a>
                                     </div>
+                                    <!-- Info after appointment is accepted for User  -->
                                     {% if request.user %}
                                     {% if request.user.is_superuser == False %}
                                     <p class="user-info1">* If you would like to change your booking please cancel it then apply for a new appointment.</p>
@@ -98,23 +107,23 @@
     </div>    
 </div>
 
-            {% if is_paginated %}
-            <div class="page-wrapper">
-                <nav aria-label="step-links">
-                    <ul class="pagination">
-                        {% if page_obj.has_previous %}
-                        <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}">Previous</a></li>
-                        {% endif %}
-                        {% for number in page_obj.paginator.page_range %}
-                        <li class="page-item"><a class="page-link" href="?page={{number}}">{{number}}</a></li>
-                        {% endfor %}
-                        {% if page_obj.has_next %}
-                        <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a></li>
-                        {% endif %}
-                    </ul>
-                </nav>
-            </div>
-            {% endif %}
+{% if is_paginated %}
+    <div class="page-wrapper">
+        <nav aria-label="step-links">
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}">Previous</a></li>
+                {% endif %}
+                {% for number in page_obj.paginator.page_range %}
+                <li class="page-item"><a class="page-link" href="?page={{number}}">{{number}}</a></li>
+                {% endfor %}
+                {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+{% endif %}
             
 
 {% endblock %}

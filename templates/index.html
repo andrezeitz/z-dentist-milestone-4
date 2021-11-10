@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+<!-- Header text -->
 <div class="hero-container">
     <img class="hero-picture" src="https://res.cloudinary.com/dkof8rxt4/image/upload/v1632823116/vecteezy_dental-health-concept-flatlay_2873478_zozwfr.jpg">
     <div class="hero-header">
@@ -9,8 +11,6 @@
         <a href="{% url 'appointment' %}" class="btn btn-primary" type="button">Book an Appointment</a>
     </div>
 </div>       
-
-
 
 <!-- About us section -->
 <section class="section about-section gray-bg" id="about">
@@ -56,6 +56,5 @@
         </div>
     </div>
 </section>
-
 
 {% endblock %}

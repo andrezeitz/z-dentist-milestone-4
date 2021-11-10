@@ -21,7 +21,7 @@ html, body {
 
 .hero-container {
     position: relative;
-    background-color: black;
+    background-color: rgb(2, 2, 2);
     border-bottom: solid black 1px;
 }
 
@@ -140,7 +140,7 @@ footer {
     background-color: white;
     color: black;
     text-align: center;
-    border-top: 2px solid black;
+    border-top: 1px solid black;
     margin-bottom: 2px;
 }
 
@@ -222,8 +222,6 @@ button  {
 
 input:focus,
 textarea:focus {
-    -moz-box-shadow: none ;
-    -webkit-box-shadow: none ;
     box-shadow: none ;
     border: 1px solid #00BCD4;
     outline-width: 0;
@@ -243,7 +241,7 @@ textarea:focus {
 
 .contact-information {
     background-color: #0d6efd;
-    border: 2px solid black;
+    border: 1px solid black;
     color: white;
     padding: 30px;
     border-radius: 8px;
@@ -286,18 +284,9 @@ table tr > th {
 
 /* Manage Appointment Card  */
 
-.card-margin {
-    margin-bottom: 1 rem;
-}
-
 .card {
     border: 0;
     box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
-    -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
-}
-.card {
     position: relative;
     display: flex;
     flex-direction: column;

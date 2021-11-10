@@ -13,12 +13,11 @@
     <div class="alert alert-success" role="alert">
         <div>
             {% for message in messages %}
-                    <div> {{message}} </div>
+                <div> {{message}} </div>
             {% endfor %}
         </div>
     </div>
 {% endif %}
-
 
 <!-- Appointment form -->    
 <div class="container-fluid px-1 py-5 mx-auto">
@@ -28,8 +27,7 @@
             <h6>Be aware that your booking is not confirmed before we approve your appointment date.</h6>
             <h6>Please select your desire date and we will come back with a confirmed date and time.</h6>
             <h6>If you want to be able to manage your booking. Please <a class="link" href="{% url 'account_login' %}">sign in</a> before submitting the form.</h6>
-            <div class="appointment-card">
-                    
+            <div class="appointment-card">      
                 <form class="form-card" method="POST" action="{% url 'appointment' %}">
                     {% csrf_token %}
                         <div class="row justify-content-between text-left">
@@ -45,7 +43,6 @@
                                 <input required type="text" id="lname" name="lname" placeholder="Your Last Name" onblur="validate(2)"> 
                             </div>
                         </div>
-
                         <div class="row justify-content-between text-left">
                             <!-- Email -->    
                             <div class="form-group col-sm-6 flex-column d-flex"> 
@@ -59,7 +56,6 @@
                                 <input type="text" id="mob" name="mobile" placeholder="Your Phone" onblur="validate(4)"> 
                             </div>
                         </div>
-                        
                         <div class="row justify-content-between text-left">
                             <!-- Threatment -->
                             <div class="form-group col-sm-6 flex-column d-flex">
