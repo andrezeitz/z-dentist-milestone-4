@@ -58,11 +58,9 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Manage</a>
                     </li>
-                    {% else %}
-                    {% url 'admin:login' as url %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Admin</a>
-                    </li>
+                    {% endif %}
+                    {% if request.user.is_superuser %}
+                    <span class="notification"><i class="far fa-bell"></i> {{count}}</span>
                     {% endif %}
                 </ul>
                 {% if request.user.is_authenticated %}

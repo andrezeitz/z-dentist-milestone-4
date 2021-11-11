@@ -13,7 +13,7 @@
     <div class="alert alert-success" role="alert">
         <div>
             {% for message in messages %}
-                    <div> {{message}} </div>
+                <div> {{message}} </div>
             {% endfor %}
         </div>
     </div>
@@ -72,11 +72,9 @@
                                     {% endif %}
                                     {% endif %}
                                     <!-- Info before appointment is accepted for User  -->
-                                    {% if request.user %}
                                     {% if request.user.is_superuser == False %}
                                     {% if app.accepted == False %}
-                                    <h6>Your booking will be confirmed as soon as possible..</h6>
-                                    {% endif %}
+                                    <h6>Your booking is waiting to be approved by our staff. Please check back later.</h6>
                                     {% endif %}
                                     {% endif %}
                                     <!-- Confirm appointment date  -->
