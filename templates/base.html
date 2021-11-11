@@ -69,7 +69,7 @@
                     <span class="text-muted">
                         <i class="far fa-user"></i> {{user}}
                     </span>
-                    <ul class="navbar-nav navbar-logout">
+                    <ul class="navbar-nav ">
                         {% url 'account_logout' as url %}
                         <li class="nav-item">
                             <a class="nav-link navbar-logout {% if request.path == url %}active{% endif %}" href="{{ url }}"><i class="fas fa-sign-out-alt"></i> Log Out</a>

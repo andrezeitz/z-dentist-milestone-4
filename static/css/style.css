@@ -7,6 +7,7 @@ html, body {
   }
   .main-bg {
     flex: 1 0 auto;
+    margin-bottom: 1rem;
   }
  
 /* Hero Picture  */
@@ -83,7 +84,8 @@ html, body {
     color: black  !important;
 }
 
-.bg-light {
+.bg-light,
+.navbar-login {
     background-color: white !important;
 }
 
@@ -100,11 +102,8 @@ html, body {
     font-weight: 500;
 }
 
-.navbar-loggout {
-    position: absolute;
-    right: 0%;
+.navbar-logout {
     padding: 0 !important;
-    padding: 8px 0 8px 0;
 }
 
 .text-muted {
@@ -130,10 +129,6 @@ html, body {
 .notification > i {
     color: red;
     font-size: 19px !important;
-}
-
-.navbar-logout {
-    padding: 0 !important;
 }
 
 /* Collapse Navbar */
@@ -260,7 +255,7 @@ textarea:focus {
 }
 
 .contact-form {
-    padding: 30px;
+    padding: 20px;
     background-color: white;
     margin-bottom: 2rem;
 }
@@ -274,7 +269,7 @@ textarea:focus {
 
 .dento-pricing-table-area {
     position: relative;
-    margin: 4rem 0 4rem 0;
+    margin: 4rem 0 3rem 0;
     border-radius: 2px;
 }
 
@@ -419,12 +414,9 @@ table tr > th {
 
 /* Media Quries for Mobile */
 @media (max-width:991px) {
-    .navbar-user {
+    .navbar-user,
+    .navbar-login {
         position: inherit;
-    }
-
-    .navbar-logout {
-        margin-top: 3px;
     }
 
     .notification {
@@ -433,6 +425,10 @@ table tr > th {
 
     .text-muted {
         padding: 8px 0 8px 0;
+    }
+
+    .navbar-logout {
+        padding: 8px 0 8px 0 !important;
     }
 }    
 
@@ -500,5 +496,11 @@ table tr > th {
         padding: 1rem 0 0.2rem 0;
         font-weight: 600;
         color: black;
+    }
+
+    input {
+        padding: 5px;
+        margin: 3px;
+        font-size: 15px;
     }
 }
