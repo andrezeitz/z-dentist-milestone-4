@@ -32,7 +32,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav">
                     {% url 'home' as url %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == url %}active{% endif %}" aria-current="page" href="{{ url }}">Home</a>
@@ -56,11 +56,12 @@
                     {% if request.user.is_authenticated %}
                     {% url 'manage_appointments' as url %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Manage</a>
+                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Manage
+                            {% if request.user.is_superuser %}
+                            <span class="notification"><i class="far fa-bell"></i> {{count}}</span>
+                            {% endif %}
+                        </a>
                     </li>
-                    {% endif %}
-                    {% if request.user.is_superuser %}
-                    <span class="notification"><i class="far fa-bell"></i> {{count}}</span>
                     {% endif %}
                 </ul>
                 {% if request.user.is_authenticated %}
@@ -68,15 +69,15 @@
                     <span class="text-muted">
                         <i class="far fa-user"></i> {{user}}
                     </span>
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav navbar-logout">
                         {% url 'account_logout' as url %}
                         <li class="nav-item">
-                            <a class="nav-link navbar-logout {% if request.path == url %}active{% endif %}" href="{{ url }}"><i class="fas fa-sign-out-alt"></i></a>
+                            <a class="nav-link navbar-logout {% if request.path == url %}active{% endif %}" href="{{ url }}"><i class="fas fa-sign-out-alt"></i> Log Out</a>
                         </li>
                     </ul>
                 </div>        
                 {% else %}
-                <ul class="navbar-nav navbar-login mr-auto">
+                <ul class="navbar-nav navbar-login">
                     {% url 'account_signup' as url %}    
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Register</a>

@@ -96,7 +96,7 @@ html, body {
 .navbar-user {
     position: absolute;
     right: 1%;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -104,6 +104,11 @@ html, body {
     position: absolute;
     right: 0%;
     padding: 0 !important;
+    padding: 8px 0 8px 0;
+}
+
+.text-muted {
+    color: black !important;
 }
 
 .navbar-user > .text-muted > i {
@@ -114,9 +119,6 @@ html, body {
 
 .fa-sign-out-alt {
     font-size: 21px;
-}
-
-.fa-sign-out-alt:hover {
     color: #0d6efd;
 }
 
