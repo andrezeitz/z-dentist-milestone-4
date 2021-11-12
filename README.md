@@ -86,6 +86,7 @@ The colors chosen are:
 * Gitpod
 * Django
 * Heroku
+* Postgres
 * Google Fonts
 * [Font Awesome](https://fontawesome.com/)
 * [W3C HTML Validation](https://validator.w3.org/)
@@ -124,6 +125,12 @@ If you are logged in as a user and make an appointment your bookings will be sho
 
 #### Admin
 If you are logged in as a Admin, this page will show you all the bookings that have been made and information on all customers. The admin can then see the disired date the customer would like for there appointment and confirm it with date and time. Once the admin press the "Accept" button an email will be send to the customer confirming the appointment with date and time. The user card will then show a text with "Appointment accepted" and the date and time for the booking. Last the admin will see confirmed button that is not clickable and a delete button to be able to delete a booking. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then disappear from the manage site.
+
+### Registration
+This link is visable in the top right corner of the navigation bar if there is no user logged in to the page. If user is already logged in it will be hidden.
+
+### Login/Logout
+Login and logout link is placed on the top right corner and will change if the user is logged in or not.
 
 ### Footer
 The footer contains the opening hours and contact information about the company.
