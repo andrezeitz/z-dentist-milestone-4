@@ -5,6 +5,7 @@ This website can not be used as a template for a business since it's a project f
 
 Live website: [Z Dentist](https://z-dentist.herokuapp.com/)
 
+![Skärmavbild 2021-11-15 kl  14 55 41](https://user-images.githubusercontent.com/85236391/141793921-c9a1c459-6645-41a3-9e9e-669098aa83ae.png)
 
 ## Table of Contents
 
@@ -48,10 +49,11 @@ Live website: [Z Dentist](https://z-dentist.herokuapp.com/)
   * I want to make it easy for customer to make an appointment
   * I want to be able to confirm appointments
   * I want to be able to cancel appointments
+  * I want to be able to change a appointment date
   * I want to have a clear overview of the customers details
   * I want to let people see the services we offer with prices
   * I want to be able to get email from customers trough a contact form
-  * I want to get a email when someone make a new booking
+  * I want to get a email when someone makes a new booking
   * I want to show where the dentist office is located
 
 ## Design
@@ -102,35 +104,35 @@ All colors was checked in a contrast checker and pass the test.
 ## Features
 The website has the following features:
 ### Navigation bar
-Navigation bar is visible on the top of the website with a logo that is clickable to update the site. When someone is logged in the navigation bar will change so the user can see there username and a logout button om the right top side. The registration and login links will also dissapear once logged in. The navigation links will collapse on smaller screens.
+Navigation bar is visible on the top of the website with a logo that is clickable to update the site. When someone is logged in the navigation bar will change so the user can see there username and a logout button om the right top side. The registration and login links will also disappear once logged in. The navigation links will collapse on smaller screens.
 
 ### Home
 The home page contains a big hero picture with a "Book an Appointment" button on it.
 It also have information about the company like how the work and how focus on quality is very important.
 
 ### Services
-The service page contains a table with all the threatments the company is doing and price information about each service.
+The service page contains a table with all the treatments the company is doing and price information about each service.
 
 ### Contact us
-The contact page is having a large google maps window to show the customer where the dentist company is located. After that its a contact box with the adress, phone number and email of the company. Last there is a contact form where the customer can enter there name, email and a message to be able to contact the company with any questions. After the message is send it will show a success message so the customer know we have recived the email.
+The contact page is having a large google maps window to show the customer where the dentist company is located. After that it's a contact box with the address, phone number and email of the company. Last there is a contact form where the customer can enter there name, email and a message to be able to contact the company with any questions. After the message is sent it will show a success message so the customer know we have received the email.
 
 ### Appointment
-On the appointment page the customer will be able to make a booking within the form. Here the user have two chooices. Either they can be logged in to the site and will then be able to manage there booking after. If they dont want to registrer it works fine to make an appointment also. They will then put in the required  information, then they can choose from a list what kind of threatment they would like to book with price information. After that they can choose a desired date for there appointment. Finally there is a field that is not required but they can enter any additional information they would like. As soon as they make the reservation there will be a success message telling them the appointment have been send to the dentist.
+On the appointment page the customer will be able to make a booking within the form. Here the user have two choices. Either they can be logged in to the site and will then be able to manage there booking after. If they dont want to register it works fine to make an appointment as well. They will then put in the required  information, then they can choose from a list what kind of treatment they would like to book with price information. After that they can choose a desired date for there appointment. Finally there is a field that is not required, but they can enter any additional information they would like. As soon as they make the reservation there will be a success message telling them the appointment have been sent to the dentist.
 
 ### Manage
-This page is only visable if you are logged in as a user or admin.
+This page is only visible if you are logged in as a user or admin.
 
 #### User
-If you are logged in as a user and make an appointment your bookings will be showned here. First it will just show your information and a message that the booking is still not confirmed. Once the admin confirm the appointment the card will change and instead show the confirmed date with time and also a delete button to let the customer cancel there appointment up to 24 hours prior to the appointment. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then disappear from the manage site.
+If you are logged in as a user and make an appointment your bookings will be showed here. First it will just show your information and a message that the booking is still not confirmed. Once the admin confirm the appointment the card will change and instead show the confirmed date with time and also a delete button to let the customer cancel there appointment up to 24 hours prior to the appointment. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then disappear from the manage site.
 
 #### Admin
-If you are logged in as a Admin, this page will show you all the bookings that have been made and information on all customers. In the nav-bar it will show a notis clock and a number for how many bookings that havent been accepted yet. The admin can then see the disired date the customer would like for there appointment and confirm it with date and time. Once the admin press the "Accept" button an email will be send to the customer confirming the appointment with date and time. The user card will then show a button where the admin can change the already approved date. When clicked a collapsable div will open up with the datetime input and a button saying "Accept New Appointment". After the date is changed a new email will be sent to both the user and the admin. Last the admin will have a delete button to be able to delete a booking. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then disappear from the manage site.
+If you are logged in as a Admin, this page will show you all the bookings that have been made and information on all customers. In the navigation bar it will show a notice clock and a number for how many bookings that haven't been accepted yet. The admin can then see the desired date the customer would like for there appointment and confirm it with date and time. Once the admin press the "Accept" button an email will be sent to the customer confirming the appointment with date and time. The user card will then show a button where the admin can change the already approved date. When clicked a collapsible div will open up with the date time input and a button saying "Accept New Appointment". After the date is changed a new email will be sent to both the user and the admin. Last the admin will have a delete button to be able to delete a booking. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then disappear from the manage site.
 
 ### Registration
-This link is visable in the top right corner of the navigation bar if there is no user logged in to the page. If user is already logged in it will be hidden.
+This link is visible in the top right corner of the navigation bar if there is no user logged in to the page. If user is already logged in it will be hidden.
 
 ### Login/Logout
-Login and logout link is placed on the top right corner and will change if the user is logged in or not.
+Login and logout link is placed in the top right corner and will change if the user is logged in or not.
 
 ### Footer
 The footer contains the opening hours and contact information about the company.
@@ -170,10 +172,10 @@ The footer contains the opening hours and contact information about the company.
 11. As a site admin, I want to be able to confirm appointment times and send out confirmation email to the customer.
 * Result: TEST PASSED
 
-12. As a site admin, I want to be able to delete appointments and send out confirmation email to the customer about the cancelation
+12. As a site admin, I want to be able to delete appointments and send out confirmation email to the customer about the cancellation
 * Result: TEST PASSED
 
-13. As a site admin, I want to be able to receive email when new bookings is beeing made.
+13. As a site admin, I want to be able to receive email when new bookings is being made.
 * Result: TEST PASSED
 
 14. As a site admin, I want to be able to receive email when someone is contacting us from the contact page.
@@ -196,15 +198,15 @@ The W3C CSS Validation Service was used to validate the CSS file used for the pr
 ### Python
 
 ### Different Screen Size
-The site is optimate for all screen sizes and tested with a Macbook Pro 13" and iPhone 13 Pro.
-I use media quries to make everything look and feel good on mobile devices.
+The site is optimize for all screen sizes and tested with a Macbook Pro 13" and iPhone 13 Pro.
+I use media queries to make everything look and feel good on mobile devices.
 
 ### Issues found during site development
-* There was an issue to send confirmation emails out to the user and Admin. I use send_mail from django and added subject and body straight in to it. In the body I added the first name of the user and also the confirmaton date and I kept getting error message that it could not read the firstname or the confirmation date. I then change it to defined both the subject and body before the send_mail and then just let the send_mail read from the variables. It made the errors go away.
+* There was an issue to send confirmation emails out to the user and Admin. I use send_mail from Django and added subject and body straight in to it. In the body I added the first name of the user and also the confirmation date and I kept getting error message that it could not read the first name or the confirmation date. I then change it to defined both the subject and body before the send_mail and then just let the send_mail read from the variables. It made the errors go away.
 
 ![Skärmavbild 2021-11-09 kl  12 40 18](https://user-images.githubusercontent.com/85236391/140917835-994ea11c-79dd-4959-a85c-477b5d45a03e.png)
 
-* I had this problem when I tested to send email when the site was deployed to the Heroku platform it gave me an error that wasen't show in Gitpod. The issue was that I forgot to add the Secret API key from Send Grid in to the config on Heroku. After adding the key to the config vars the problem went away.
+* I had this problem when I tested to send email when the site was deployed to the Heroku platform it gave me an error that was not showed in Gitpod. The issue was that I forgot to add the Secret API key from Send Grid in to the config on Heroku. After adding the key to the config vars the problem went away.
 
 <img width="660" alt="Skärmavbild 2021-10-28 kl  10 28 39" src="https://user-images.githubusercontent.com/85236391/140926748-d576da00-ff7d-48e9-89d1-41eb1fd59ee6.png">
 
@@ -223,7 +225,7 @@ I use media quries to make everything look and feel good on mobile devices.
 ##### Solution:
 ![Skärmavbild 2021-11-09 kl  15 26 30](https://user-images.githubusercontent.com/85236391/140941993-09fefea0-177f-4048-b0ac-3226fb42b143.png)
 
-* My success messages was bugging when people was logging in and out. It was showing inside the "Manage" page even when that was only for the confirmation of appointments. I fixed it to delete the automatic messages Allauth send out when it's a successfull login/out to any page since I wasen't using it.
+* My success messages was bugging when people was logging in and out. It was showing inside the "Manage" page even when that was only for the confirmation of appointments. I fixed it to delete the automatic messages Allauth send out when it's a successful login/out to any page since I was not using it.
 
 ![Skärmavbild 2021-11-08 kl  12 53 44](https://user-images.githubusercontent.com/85236391/140918482-a06366fe-84e6-48b4-872d-d80e00bb99a2.png)
 
@@ -267,11 +269,11 @@ How to clone this repository.
 * Press Enter to create your local clone.
 
 ## Credits
-* I learnd how to make dropdown menus in Models from this page [Stackoverflow](https://stackoverflow.com/questions/31130706/dropdown-in-django-model)
+* I learned how to make drop down menus in Models from this page [Stackoverflow](https://stackoverflow.com/questions/31130706/dropdown-in-django-model)
 * I use code from this card widget [Bootdey](https://www.bootdey.com/snippets/view/events-card-widget)
-* I learned how to send emails with django from this website [Blog](https://sandeepsajan0.medium.com/send-email-in-django-app-with-sendgrid-a009bf19a389)
-* I use django docs to understand more about classed based views [Django Docs](https://docs.djangoproject.com/en/3.2/topics/class-based-views/intro/)
-* I use django docs to understand more about sending emails [Django Docs](https://docs.djangoproject.com/en/3.2/topics/email/)
-* I use django docs to understand more about how pagination works [Django Docs](https://docs.djangoproject.com/en/3.2/topics/pagination/)
-* I use django docs to understand more about how to protect a page to only authentic users [Django Docs](https://docs.djangoproject.com/en/3.2/topics/auth/default/)
-* I use the bootstrap code for collapse divs[Bootstrap](https://getbootstrap.com/docs/5.0/components/collapse/)
+* I learned how to send emails with Django from this website [Blog](https://sandeepsajan0.medium.com/send-email-in-django-app-with-sendgrid-a009bf19a389)
+* I use Django docs to understand more about classed based views [Django Docs](https://docs.djangoproject.com/en/3.2/topics/class-based-views/intro/)
+* I use Django docs to understand more about sending emails [Django Docs](https://docs.djangoproject.com/en/3.2/topics/email/)
+* I use Django docs to understand more about how pagination works [Django Docs](https://docs.djangoproject.com/en/3.2/topics/pagination/)
+* I use Django docs to understand more about how to protect a page to only authentic users [Django Docs](https://docs.djangoproject.com/en/3.2/topics/auth/default/)
+* I use this bootstrap code to be able to collapse divs[Bootstrap](https://getbootstrap.com/docs/5.0/components/collapse/)
