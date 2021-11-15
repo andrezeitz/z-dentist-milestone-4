@@ -138,3 +138,15 @@ def delete_appointment(request, appointment_id):
     messages.add_message(
         request, messages.SUCCESS, "Booking was deleted from the database.")
     return redirect(reverse('manage_appointments'))
+
+
+# def update_appointment(request, appointment_id):
+#     """
+    
+#     """
+#     appointment = Appointment.objects.get(id=appointment_id)
+#     appointment.edited = True
+
+#     messages.add_message(
+#         request, messages.SUCCESS, "Appointment date was changed.")
+#     return redirect(reverse('manage_appointments'))

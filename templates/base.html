@@ -69,7 +69,7 @@
                     <span class="text-muted">
                         <i class="far fa-user"></i> {{user}}
                     </span>
-                    <ul class="navbar-nav ">
+                    <ul class="navbar-nav navbar-logout">
                         {% url 'account_logout' as url %}
                         <li class="nav-item">
                             <a class="nav-link navbar-logout {% if request.path == url %}active{% endif %}" href="{{ url }}"><i class="fas fa-sign-out-alt"></i> Log Out</a>
@@ -80,11 +80,11 @@
                 <ul class="navbar-nav navbar-login">
                     {% url 'account_signup' as url %}    
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Register</a>
+                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}"><i class="far fa-user-circle"></i> Register</a>
                     </li>
                     {% url 'account_login' as url %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Login</a>
+                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}"><i class="fas fa-sign-in-alt"></i> Log in</a>
                     </li>
                 </ul>    
                 {% endif %}
@@ -130,7 +130,8 @@
         </div>
     </div>    
 </footer>
-    
+{% block postloadjs %}
+{% endblock %}    
 </body>
 
 </html>

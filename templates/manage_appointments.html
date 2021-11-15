@@ -63,21 +63,51 @@
                                     <!-- Info before appointment is accepted for Admin  -->
                                     {% if app.accepted == False %}
                                     {% if request.user.is_superuser %}
-                                    <h6>Confirm Appointment</h6>
-                                    <input type="datetime-local" name="confirm-date" class="form-control mb-2">
-                                        <input hidden="true" name="appointment-id" value="{{app.id}}">
-                                        <input hidden="true" name="email" value="{{app.email}}">
-                                        <input hidden="true" name="fname" value="{{app.fname}}">
-                                    <input class="btn-block btn-primary form-control" type="submit" value="Accept">
+                                    <div class="card card-body">
+                                        <!-- Card to accept the appointment date  -->
+                                        <h6>Confirm Appointment</h6>
+                                        <input type="datetime-local" name="confirm-date" class="form-control mb-2">
+                                            <input hidden="true" name="appointment-id" value="{{app.id}}">
+                                            <input hidden="true" name="email" value="{{app.email}}">
+                                            <input hidden="true" name="fname" value="{{app.fname}}">
+                                        <input class="btn-block btn-primary form-control" type="submit" value="Accept Appointment">
+                                    </div>
                                     {% endif %}
                                     {% endif %}
-                                    <!-- Info before appointment is accepted for User  -->
+                                    <!-- Info for user when appointment is still not accepted  -->
                                     {% if request.user.is_superuser == False %}
                                     {% if app.accepted == False %}
                                     <h6>Your booking is waiting to be approved by our staff. Please check back later.</h6>
                                     {% endif %}
                                     {% endif %}
-                                    <!-- Confirm appointment date  -->
+                                    <!-- Confirm appointment date ADMIN  -->
+                                    {% if request.user.is_superuser %}
+                                    {% if app.accepted %}
+                                    <div class="confirmation">
+                                        <h6>Confirmed Appointment Date</h6>
+                                        <p>{{app.accepted_date}}</p>                            
+                                    </div>
+                                    <!-- Admin buttons  -->
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample{{app.id}}" aria-expanded="false" aria-controls="collapseExample">
+                                        CHANGE TIME
+                                    </button>
+                                    <a href="{% url 'delete-appointment' app.id %}" class="btn btn-danger">DELETE</a> 
+                                    <!-- Collapsable div to change appointment times -->
+                                    <div class="collapse" id="collapseExample{{app.id}}">
+                                        <div class="card card-body">
+                                            <h6>Change Appointment</h6>
+                                            <input type="datetime-local" name="confirm-date" class="form-control mb-2">
+                                                <input hidden="true" name="appointment-id" value="{{app.id}}">
+                                                <input hidden="true" name="email" value="{{app.email}}">
+                                                <input hidden="true" name="fname" value="{{app.fname}}">
+                                            <input class="btn-block btn-primary form-control" type="submit" value="Edit Appointment">
+                                        </div>
+                                    </div>        
+                                    {% endif %}
+                                    {% endif %}
+                                    <!-- Confirmed Appointment user  -->
+                                    {% if request.user %}
+                                    {% if request.user.is_superuser == False %}
                                     {% if app.accepted %}
                                     <div class="confirmation">
                                         <h6>Confirmed Appointment Date</h6>
@@ -87,9 +117,8 @@
                                         <input class="btn btn-success" value="CONFIRMED">
                                         <a href="{% url 'delete-appointment' app.id %}" class="btn btn-danger">DELETE</a>
                                     </div>
-                                    <!-- Info after appointment is accepted for User  -->
-                                    {% if request.user %}
-                                    {% if request.user.is_superuser == False %}
+                                    
+                                    <!-- Info after appointment is accepted for User  -->                                    
                                     <p class="user-info1">* If you would like to change your booking please cancel it then apply for a new appointment.</p>
                                     <p class="user-info2">* Please be aware you will need to cancel 24 hours prior to your appointment to not be charged.</p>
                                     {% endif %}
@@ -104,7 +133,7 @@
         {% endfor %}
     </div>    
 </div>
-
+<!-- Pageination on the button of the page  -->  
 {% if is_paginated %}
     <div class="page-wrapper">
         <nav aria-label="step-links">
@@ -122,6 +151,5 @@
         </nav>
     </div>
 {% endif %}
-            
 
 {% endblock %}
