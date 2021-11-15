@@ -124,7 +124,7 @@ This page is only visable if you are logged in as a user or admin.
 If you are logged in as a user and make an appointment your bookings will be showned here. First it will just show your information and a message that the booking is still not confirmed. Once the admin confirm the appointment the card will change and instead show the confirmed date with time and also a delete button to let the customer cancel there appointment up to 24 hours prior to the appointment. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then disappear from the manage site.
 
 #### Admin
-If you are logged in as a Admin, this page will show you all the bookings that have been made and information on all customers. The admin can then see the disired date the customer would like for there appointment and confirm it with date and time. Once the admin press the "Accept" button an email will be send to the customer confirming the appointment with date and time. The user card will then show a text with "Appointment accepted" and the date and time for the booking. Last the admin will see confirmed button that is not clickable and a delete button to be able to delete a booking. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then disappear from the manage site.
+If you are logged in as a Admin, this page will show you all the bookings that have been made and information on all customers. In the nav-bar it will show a notis clock and a number for how many bookings that havent been accepted yet. The admin can then see the disired date the customer would like for there appointment and confirm it with date and time. Once the admin press the "Accept" button an email will be send to the customer confirming the appointment with date and time. The user card will then show a button where the admin can change the already approved date. When clicked a collapsable div will open up with the datetime input and a button saying "Accept New Appointment". After the date is changed a new email will be sent to both the user and the admin. Last the admin will have a delete button to be able to delete a booking. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then disappear from the manage site.
 
 ### Registration
 This link is visable in the top right corner of the navigation bar if there is no user logged in to the page. If user is already logged in it will be hidden.
@@ -179,6 +179,12 @@ The footer contains the opening hours and contact information about the company.
 14. As a site admin, I want to be able to receive email when someone is contacting us from the contact page.
 * Result: TEST PASSED
 
+15. As a site admin, I want to be able to change the appointment time without having to cancel the booking.
+* Result: TEST PASSED
+
+16. As a site admin, I want to see how many bookings still havent been accepted with a date yet.
+* Result: TEST PASSED 
+
 ### Code Validation
 
 ### HTML
@@ -217,11 +223,16 @@ I use media quries to make everything look and feel good on mobile devices.
 ##### Solution:
 ![Skärmavbild 2021-11-09 kl  15 26 30](https://user-images.githubusercontent.com/85236391/140941993-09fefea0-177f-4048-b0ac-3226fb42b143.png)
 
-
 * My success messages was bugging when people was logging in and out. It was showing inside the "Manage" page even when that was only for the confirmation of appointments. I fixed it to delete the automatic messages Allauth send out when it's a successfull login/out to any page since I wasen't using it.
 
 ![Skärmavbild 2021-11-08 kl  12 53 44](https://user-images.githubusercontent.com/85236391/140918482-a06366fe-84e6-48b4-872d-d80e00bb99a2.png)
 
+* I was getting some error message when trying to add a edit button to the manage appointment form. Once the edit button was clicked it would work as a submit button for the datetime form and say that the date is not set. To work around it I added a collapse div from bootstrap and then added the {app.id} id tag on it so each card would know which edit button was clicked.
+
+![Skärmavbild 2021-11-12 kl  14 33 34](https://user-images.githubusercontent.com/85236391/141792406-f4c717a8-2917-4182-81f5-0cbf3e184b22.png)
+
+##### Solution:
+![Skärmavbild 2021-11-15 kl  14 46 42](https://user-images.githubusercontent.com/85236391/141792545-009587b1-dada-4c10-a101-ea41984c91fd.png)
 
 
 ## Deployment
@@ -263,5 +274,4 @@ How to clone this repository.
 * I use django docs to understand more about sending emails [Django Docs](https://docs.djangoproject.com/en/3.2/topics/email/)
 * I use django docs to understand more about how pagination works [Django Docs](https://docs.djangoproject.com/en/3.2/topics/pagination/)
 * I use django docs to understand more about how to protect a page to only authentic users [Django Docs](https://docs.djangoproject.com/en/3.2/topics/auth/default/)
-
-
+* I use the bootstrap code for collapse divs[Bootstrap](https://getbootstrap.com/docs/5.0/components/collapse/)
