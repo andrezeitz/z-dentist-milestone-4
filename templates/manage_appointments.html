@@ -91,7 +91,7 @@
                                     <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample{{app.id}}" aria-expanded="false" aria-controls="collapseExample">
                                         CHANGE TIME
                                     </button>
-                                    <a href="{% url 'delete-appointment' app.id %}" class="btn btn-danger">DELETE</a>
+                                    <a href="{% url 'delete-appointment' app.id %}" class="btn btn-danger btn-admin">DELETE</a>
                                     <!-- Collapsable div to change appointment times -->
                                     <div class="collapse" id="collapseExample{{app.id}}">
                                         <div class="card card-body">
@@ -113,13 +113,11 @@
                                         <div class="card card-body">
                                             <h6>Confirmed Appointment Date</h6>
                                             <p>{{app.accepted_date}}</p>                            
-                                    </div>
-                                    <!-- User buttons -->
-                                    <div>
-                                        <input class="btn btn-success" value="CONFIRMED">
-                                        <a href="{% url 'delete-appointment' app.id %}" class="btn btn-danger">DELETE</a>
+                                             <!-- User button -->
+                                            <a href="{% url 'delete-appointment' app.id %}" class="btn btn-danger">CANCEL APPOINTMENT</a>
                                         </div>
-                                    </div>
+                                    </div>    
+                                    
         
                                     <!-- Info after appointment is accepted for User  -->                                    
                                     <p class="user-info1">* If you would like to change your booking please cancel it then apply for a new appointment.</p>

@@ -352,11 +352,12 @@ table tr > th {
     cursor: default;
 }
 
-.btn-danger,
-.btn-dark{
+.btn-admin,
+.btn-dark {
     width: 49%;
     padding: 5px;
 }
+
 
 .user-info1 {
     margin-top: 1rem;
