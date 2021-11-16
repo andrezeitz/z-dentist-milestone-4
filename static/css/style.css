@@ -118,7 +118,8 @@ html, body {
 
 .fa-sign-out-alt,
 .fa-sign-in-alt,
-.fa-user-circle {
+.fa-user-circle,
+.fa-clock {
     font-size: 20px;
     color: #0d6efd;
 }
@@ -415,6 +416,7 @@ table tr > th {
 }
 
 /* Media Quries for Mobile */
+
 @media (max-width:991px) {
     .navbar-user,
     .navbar-login {
