@@ -267,6 +267,10 @@ textarea:focus {
     margin-bottom: 1rem;
 }
 
+iframe {
+    width: 100%;
+}
+
 /* Services Page */
 
 .dento-pricing-table-area {
