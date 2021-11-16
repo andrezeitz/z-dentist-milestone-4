@@ -192,10 +192,32 @@ The footer contains the opening hours and contact information about the company.
 ### HTML
 The W3C Markup Validation Service was used to validate the HTML page of the project. No errors or warnings to show.
 
+##### Home Page
+![Skärmavbild 2021-11-16 kl  14 09 47](https://user-images.githubusercontent.com/85236391/141992257-0c38442a-1ec8-44e3-b0eb-00c152d26c7d.png)
+
+##### Service Page
+![Skärmavbild 2021-11-16 kl  14 14 57](https://user-images.githubusercontent.com/85236391/141992290-91f67f70-0adb-4a93-8cee-0b7e64e3d0ce.png)
+
+##### Contact-Us Page
+![Skärmavbild 2021-11-16 kl  14 15 21](https://user-images.githubusercontent.com/85236391/141992304-15b31d71-6b80-48d3-ab2b-0e16efb26219.png)
+
+##### Appointment Page
+![Skärmavbild 2021-11-16 kl  14 15 48](https://user-images.githubusercontent.com/85236391/141992314-df39f742-7d3a-4c57-b3e9-26b29b0593ce.png)
+
+##### Manage-Appointment Page
+![Skärmavbild 2021-11-16 kl  14 16 06](https://user-images.githubusercontent.com/85236391/141992323-5925d6a7-867b-4607-b495-2e3c42945c2b.png)
+
 ### CSS
 The W3C CSS Validation Service was used to validate the CSS file used for the project. No errors or warnings to show.
+![Skärmavbild 2021-11-16 kl  13 33 34](https://user-images.githubusercontent.com/85236391/141992519-c7f7b21d-b992-4ada-afdd-9b31dbd687d6.png)
 
 ### Python
+The PEP8 Online Check was used to validate the Python code in both .views files. No errors or warnings to show
+
+![Skärmavbild 2021-11-16 kl  13 29 57](https://user-images.githubusercontent.com/85236391/141985864-00a3c2e9-69a1-4ca6-9eaf-521b60beb425.png)
+
+![Skärmavbild 2021-11-16 kl  13 30 37](https://user-images.githubusercontent.com/85236391/141985872-8760bd91-9828-4257-84fa-843cf3b33921.png)
+
 
 ### Different Screen Size
 The site is optimize for all screen sizes and tested with a Macbook Pro 13" and iPhone 13 Pro.
@@ -276,4 +298,4 @@ How to clone this repository.
 * I use Django docs to understand more about sending emails [Django Docs](https://docs.djangoproject.com/en/3.2/topics/email/)
 * I use Django docs to understand more about how pagination works [Django Docs](https://docs.djangoproject.com/en/3.2/topics/pagination/)
 * I use Django docs to understand more about how to protect a page to only authentic users [Django Docs](https://docs.djangoproject.com/en/3.2/topics/auth/default/)
-* I use this bootstrap code to be able to collapse divs[Bootstrap](https://getbootstrap.com/docs/5.0/components/collapse/)
+* I use this bootstrap code to be able to collapse divs [Bootstrap](https://getbootstrap.com/docs/5.0/components/collapse/)
