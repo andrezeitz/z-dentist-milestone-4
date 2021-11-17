@@ -114,7 +114,7 @@ It also have information about the company like how the work and how focus on qu
 The service page contains a table with all the treatments the company is doing and price information about each service.
 
 ### Contact us
-The contact page is having a large google maps window to show the customer where the dentist company is located. After that it's a contact box with the address, phone number and email of the company. Last there is a contact form where the customer can enter there name, email and a message to be able to contact the company with any questions. After the message is sent it will show a success message so the customer know we have received the email.
+The contact page has a large google maps window to show the customer where the dentist company is located. After that it's a contact box with the address, phone number and email of the company. Last there is a contact form where the customer can enter there name, email and a message to be able to contact the company with any questions. After the message is sent it will show a success message so the customer know we have received the email.
 
 ### Appointment
 On the appointment page the customer will be able to make a booking within the form. Here the user have two choices. Either they can be logged in to the site and will then be able to manage there booking after. If they dont want to register it works fine to make an appointment as well. They will then put in the required  information, then they can choose from a list what kind of treatment they would like to book with price information. After that they can choose a desired date for there appointment. Finally there is a field that is not required, but they can enter any additional information they would like. As soon as they make the reservation there will be a success message telling them the appointment have been sent to the dentist.
@@ -126,7 +126,7 @@ This page is only visible if you are logged in as a user or admin.
 If you are logged in as a user and make an appointment your bookings will be showed here. First it will just show your information and a message that the booking is still not confirmed. Once the admin confirm the appointment the card will change and instead show the confirmed date with time and also a delete button to let the customer cancel there appointment up to 24 hours prior to the appointment. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then disappear from the manage site.
 
 #### Admin
-If you are logged in as a Admin, this page will show you all the bookings that have been made and information on all customers. In the navigation bar it will show a notice clock and a number for how many bookings that haven't been accepted yet. The admin can then see the desired date the customer would like for there appointment and confirm it with date and time. Once the admin press the "Accept" button an email will be sent to the customer confirming the appointment with date and time. The user card will then show a button where the admin can change the already approved date. When clicked a collapsible div will open up with the date time input and a button saying "Accept New Appointment". After the date is changed a new email will be sent to both the user and the admin. Last the admin will have a delete button to be able to delete a booking. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then disappear from the manage site.
+If you are logged in as a Admin, this page will show you all the bookings that have been made and information on all customers. In the navigation bar it will show a notice clock and a number for how many bookings that haven't been accepted yet. The admin can then see the desired date the customer would like for there appointment and confirm it with date and time. Once the admin press the "Accept" button an email will be sent to the customer confirming the appointment with date and time. The user card will then show a button where the admin can change the already approved date. When clicked a collapsible div will open up with the date time input and a button saying "Accept New Appointment". After the date is changed a new email will be sent to both the user and the admin. Last the admin will have a delete button to be able to delete a booking. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then be deleted from the database.
 
 ### Registration
 This link is visible in the top right corner of the navigation bar if there is no user logged in to the page. If user is already logged in it will be hidden.
@@ -181,7 +181,7 @@ The footer contains the opening hours and contact information about the company.
 14. As a site admin, I want to be able to receive email when someone is contacting us from the contact page.
 * Result: TEST PASSED
 
-15. As a site admin, I want to be able to change the appointment time without having to cancel the booking.
+15. As a site admin, I want to be able to change the appointment time without to cancel the booking.
 * Result: TEST PASSED
 
 16. As a site admin, I want to see how many bookings still havent been accepted with a date yet.
@@ -220,26 +220,34 @@ The PEP8 Online Check was used to validate the Python code in both .views files.
 
 
 ### Different Screen Size
-The site is optimize for all screen sizes and tested with a Macbook Pro 13" and iPhone 13 Pro.
+The site is optimized for all screen sizes and tested with a Macbook Pro 13" and iPhone 13 Pro.
 I use media queries to make everything look and feel good on mobile devices.
 
 ### Issues found during site development
-* There was an issue to send confirmation emails out to the user and Admin. I use send_mail from Django and added subject and body straight in to it. In the body I added the first name of the user and also the confirmation date and I kept getting error message that it could not read the first name or the confirmation date. I then change it to defined both the subject and body before the send_mail and then just let the send_mail read from the variables. It made the errors go away.
+1. There was an issue to send confirmation emails out to the user and Admin. I use <code>send_mail</code> from Django and added subject and body straight in to it. In the body I added the first name of the user and also the confirmation date and I kept getting error message that it could not read the first name or the confirmation date. I then change it to defined both the subject and body before the <code>send_mail</code> and then just let the <code>send_mail</code> read from the variables. It made the errors go away.
 
 ![Skärmavbild 2021-11-09 kl  12 40 18](https://user-images.githubusercontent.com/85236391/140917835-994ea11c-79dd-4959-a85c-477b5d45a03e.png)
 
-* I had this problem when I tested to send email when the site was deployed to the Heroku platform it gave me an error that was not showed in Gitpod. The issue was that I forgot to add the Secret API key from Send Grid in to the config on Heroku. After adding the key to the config vars the problem went away.
+2. I had this problem when I tested to send email when the site was deployed to the Heroku platform it gave me an error that was not showed in Gitpod. The issue was that I forgot to add the Secret API key from Send Grid in to the config on Heroku. After adding the key to the config vars the problem went away.
 
 <img width="660" alt="Skärmavbild 2021-10-28 kl  10 28 39" src="https://user-images.githubusercontent.com/85236391/140926748-d576da00-ff7d-48e9-89d1-41eb1fd59ee6.png">
 
-* When a user was going to make a second appointment they get a error message saying "IntegrityError". The reason was I had a onetoone relationship with the user and the appointment. So I changed the User model to a ForeignKey instead and get rid of the error right away.
+3. When a user was going to make a second appointment they get a error message saying "IntegrityError". The reason was I had a onetoone relationship with the user and the appointment. So I changed the User model to a ForeignKey instead and get rid of the error right away.
 
 ###### New:
 ![Skärmavbild 2021-11-09 kl  13 04 34](https://user-images.githubusercontent.com/85236391/140921303-082c13bb-1c07-4036-954d-2f8afb6b417f.png)
 ###### Old:
 ![Skärmavbild 2021-11-09 kl  13 05 25](https://user-images.githubusercontent.com/85236391/140921310-1ae4f280-244c-45b4-abe7-c5d34dba752e.png)
 
-* The datetime was not rendering correct from the model so I split it up to make it look better.
+After the change I got another problem that users that did not login would get an error saying this:
+
+<img width="1323" alt="Skärmavbild 2021-11-17 kl  15 22 09" src="https://user-images.githubusercontent.com/85236391/142243977-99350f84-f678-468f-a817-b8e8f4c3733f.png">
+
+I fixed the error by using if/else statments in the function that was calling the form. If the user is not logged in the <code>user=request.user</code> will not be used.
+
+<img width="350" alt="Skärmavbild 2021-11-17 kl  17 41 56" src="https://user-images.githubusercontent.com/85236391/142244147-21c66cc4-81ad-4a2d-84cb-6cbb2c5ea678.png">
+
+4. The datetime was not rendering correct from the model so I split it up to make it look better.
 ##### Old:
 ![Skärmavbild 2021-11-04 kl  12 41 42](https://user-images.githubusercontent.com/85236391/140941868-edf7654f-6e8b-4be8-a49e-9220ec22c639.png)
 ##### New:
@@ -247,11 +255,11 @@ I use media queries to make everything look and feel good on mobile devices.
 ##### Solution:
 ![Skärmavbild 2021-11-09 kl  15 26 30](https://user-images.githubusercontent.com/85236391/140941993-09fefea0-177f-4048-b0ac-3226fb42b143.png)
 
-* My success messages was bugging when people was logging in and out. It was showing inside the "Manage" page even when that was only for the confirmation of appointments. I fixed it to delete the automatic messages Allauth send out when it's a successful login/out to any page since I was not using it.
+5. My success messages was bugging when people was logging in and out. It was showing inside the "Manage" page even when that was only for the confirmation of appointments. I fixed it to delete the automatic messages Allauth send out when it's a successful login/out to any page since I was not using it.
 
 ![Skärmavbild 2021-11-08 kl  12 53 44](https://user-images.githubusercontent.com/85236391/140918482-a06366fe-84e6-48b4-872d-d80e00bb99a2.png)
 
-* I was getting some error message when trying to add a edit button to the manage appointment form. Once the edit button was clicked it would work as a submit button for the datetime form and say that the date is not set. To work around it I added a collapse div from bootstrap and then added the {app.id} id tag on it so each card would know which edit button was clicked.
+6. I was getting some error message when trying to add a edit button to the manage appointment form. Once the edit button was clicked it would work as a submit button for the datetime form and say that the date is not set. To work around it I added a collapse div from bootstrap and then added the <code>{app.id}</code> on the div so each card would know which edit button was clicked.
 
 ![Skärmavbild 2021-11-12 kl  14 33 34](https://user-images.githubusercontent.com/85236391/141792406-f4c717a8-2917-4182-81f5-0cbf3e184b22.png)
 
