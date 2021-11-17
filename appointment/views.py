@@ -31,16 +31,27 @@ class AppointmentTemplateView(TemplateView):
         date_time = request.POST.get('datetime')
         information = request.POST.get('information')
 
-        appointment = Appointment.objects.create(
-            first_name=fname,
-            last_name=lname,
-            email=email,
-            phone=mobile,
-            treatment=treatment,
-            datetime=date_time,
-            information=information,
-            user=request.user,
-        )
+        if request.user.username:
+            appointment = Appointment.objects.create(
+                first_name=fname,
+                last_name=lname,
+                email=email,
+                phone=mobile,
+                treatment=treatment,
+                datetime=date_time,
+                information=information,
+                user=request.user,
+            )
+        else:
+            appointment = Appointment.objects.create(
+                first_name=fname,
+                last_name=lname,
+                email=email,
+                phone=mobile,
+                treatment=treatment,
+                datetime=date_time,
+                information=information,
+            )
 
         appointment.save()
 
