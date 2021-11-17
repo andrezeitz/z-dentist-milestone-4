@@ -66,11 +66,12 @@
                                     <div class="card card-body">
                                         <!-- Card to accept the appointment date  -->
                                         <h6>Confirm Appointment</h6>
-                                        <input type="datetime-local" name="confirm-date" class="form-control mb-2">
+                                        <input type="datetime-local" name="confirm-date" class="form-control mb-2" required>
                                             <input hidden="true" name="appointment-id" value="{{app.id}}">
                                             <input hidden="true" name="email" value="{{app.email}}">
                                             <input hidden="true" name="fname" value="{{app.fname}}">
-                                        <input class="btn-block btn-primary form-control" type="submit" value="Accept Appointment">
+                                        <input class="btn-success form-control" type="submit" value="ACCEPT APPOINTMENT">
+                                        <a href="{% url 'delete-appointment' app.id %}" class="btn btn-danger">CANCEL APPOINTMENT</a>
                                     </div>
                                     {% endif %}
                                     {% endif %}
@@ -96,11 +97,11 @@
                                     <div class="collapse" id="collapseExample{{app.id}}">
                                         <div class="card card-body">
                                             <h6>Change Appointment</h6>
-                                            <input type="datetime-local" name="confirm-date" class="form-control mb-2">
+                                            <input type="datetime-local" name="confirm-date" class="form-control mb-2" required>
                                                 <input hidden="true" name="appointment-id" value="{{app.id}}">
                                                 <input hidden="true" name="email" value="{{app.email}}">
                                                 <input hidden="true" name="fname" value="{{app.fname}}">
-                                            <input class="btn-block btn-primary form-control" type="submit" value="Accept New Appointment">
+                                            <input class="btn-success form-control" type="submit" value="ACCEPT NEW APPOINTMENT">
                                         </div>
                                     </div>        
                                     {% endif %}

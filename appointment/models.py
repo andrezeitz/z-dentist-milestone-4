@@ -25,14 +25,14 @@ class Appointment(models.Model):
     last_name = models.CharField(max_length=50, unique=False)
     email = models.EmailField(max_length=50, unique=False)
     phone = models.CharField(max_length=50, unique=False)
-    treatment = models.CharField(max_length=100, choices=TREATMENT_CHOICES, default='Basic dentist survey: 100€')
+    treatment = models.CharField(max_length=100, choices=TREATMENT_CHOICES, default='Basic dentist survey: 100€') # noqa
     datetime = models.DateField(auto_now_add=False, null=True, blank=True)
     information = models.TextField(blank=True)
     sent_date = models.DateField(auto_now_add=True)
     accepted = models.BooleanField(default=False)
     edited = models.BooleanField(default=False)
-    accepted_date = models.DateTimeField(auto_now=False, null=True, auto_now_add=False,)
-    user = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+    accepted_date = models.DateTimeField(auto_now=False, null=True, auto_now_add=False,) # noqa
+    user = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE) # noqa
 
     # Define string representation for this model class,
     # It will be used when display model class data in Django Admin web site.
