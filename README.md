@@ -56,6 +56,7 @@ Live website: [Z Dentist](https://z-dentist.herokuapp.com/)
   * I want to get a email when someone makes a new booking
   * I want to show where the dentist office is located
 
+* I planned the project [here](https://github.com/andrezeitz/z_dentist/projects/2)
 ## Design
 
 ### Fonts
@@ -307,3 +308,4 @@ How to clone this repository.
 * I use Django docs to understand more about how pagination works [Django Docs](https://docs.djangoproject.com/en/3.2/topics/pagination/)
 * I use Django docs to understand more about how to protect a page to only authentic users [Django Docs](https://docs.djangoproject.com/en/3.2/topics/auth/default/)
 * I use this bootstrap code to be able to collapse divs [Bootstrap](https://getbootstrap.com/docs/5.0/components/collapse/)
+* I learned how to make colums in the admin panel with [Dev2ga] https://www.dev2qa.com/how-to-show-custom-model-columns-using-django-admin/
