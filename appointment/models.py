@@ -32,10 +32,13 @@ class Appointment(models.Model):
     accepted = models.BooleanField(default=False)
     edited = models.BooleanField(default=False)
     accepted_date = models.DateTimeField(auto_now=False, null=True, auto_now_add=False,)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
 
+    # Define string representation for this model class,
+    # It will be used when display model class data in Django Admin web site.
     def __str__(self):
-        return self.first_name
+        ret = self.first_name + ',' + self.last_name + ',' + self.email
+        return ret
 
     class Meta:
-        ordering = ["-sent_date"]
+        unique_together = ['first_name']

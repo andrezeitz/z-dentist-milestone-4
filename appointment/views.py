@@ -136,5 +136,5 @@ def delete_appointment(request, appointment_id):
     )
 
     messages.add_message(
-        request, messages.SUCCESS, "Booking was deleted from the database.")
+        request, messages.SUCCESS, "The appointment was cancelled.")
     return redirect(reverse('manage_appointments'))
