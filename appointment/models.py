@@ -31,7 +31,6 @@ class Appointment(models.Model):
     information = models.TextField(blank=True)
     sent_date = models.DateField(auto_now_add=True)
     accepted = models.BooleanField(default=False)
-    edited = models.BooleanField(default=False)
     accepted_date = models.DateTimeField(auto_now=False, null=True,
                                          auto_now_add=False,)
     user = models.ForeignKey(User, blank=True, null=True,
