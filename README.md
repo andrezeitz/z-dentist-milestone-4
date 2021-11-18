@@ -328,6 +328,10 @@ I fixed the error by using if/else statments in the function that was calling th
 
 The program is set to be deployed automatically after each push from gitpod.
 
+I also set up a Postgres database with Heroku.
+1. Click on Resources in your Heroku app.
+2. In the add-ons field search for Heroku Postgres and press submit.
+
 ### Cloning
 How to clone this repository.
 
