@@ -1,5 +1,5 @@
 # Z Dentist
-Z Dentist is a dentist practice for everyone.
+Z Dentist is not your average dentist. Our unique offer combines the best dental care at the right price. Keeping the highest standard of quality is key in everything that we do.
 
 This website can not be used as a template for a business since it's a project for educational purposes.
 
@@ -234,7 +234,8 @@ The W3C Markup Validation Service was used to validate the HTML page of the proj
 
 ### CSS
 The W3C CSS Validation Service was used to validate the CSS file used for the project. No errors or warnings to show.
-![Skärmavbild 2021-11-16 kl  13 33 34](https://user-images.githubusercontent.com/85236391/141992519-c7f7b21d-b992-4ada-afdd-9b31dbd687d6.png)
+
+<img width="1132" alt="Skärmavbild 2021-11-18 kl  14 11 43" src="https://user-images.githubusercontent.com/85236391/142421705-2fbc9952-8f4f-4904-af51-39cb4f337586.png">
 
 ### Python
 The PEP8 Online Check was used to validate the Python code in both .views files. No errors or warnings to show
