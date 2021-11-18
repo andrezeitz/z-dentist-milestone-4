@@ -238,11 +238,14 @@ The W3C CSS Validation Service was used to validate the CSS file used for the pr
 <img width="1132" alt="Skärmavbild 2021-11-18 kl  14 11 43" src="https://user-images.githubusercontent.com/85236391/142421705-2fbc9952-8f4f-4904-af51-39cb4f337586.png">
 
 ### Python
-The PEP8 Online Check was used to validate the Python code in both .views files. No errors or warnings to show
+The PEP8 Online Check was used to validate all Python code. No errors or warnings to show
 
 ![Skärmavbild 2021-11-16 kl  13 29 57](https://user-images.githubusercontent.com/85236391/141985864-00a3c2e9-69a1-4ca6-9eaf-521b60beb425.png)
-
 ![Skärmavbild 2021-11-16 kl  13 30 37](https://user-images.githubusercontent.com/85236391/141985872-8760bd91-9828-4257-84fa-843cf3b33921.png)
+<img width="920" alt="Skärmavbild 2021-11-18 kl  16 08 27" src="https://user-images.githubusercontent.com/85236391/142442168-8da5b038-496b-44e0-b133-3297ddc85ae4.png">
+<img width="925" alt="Skärmavbild 2021-11-18 kl  16 10 16" src="https://user-images.githubusercontent.com/85236391/142442192-0c8b6532-aaf8-4e37-8e3f-d1b8a61575ba.png">
+<img width="916" alt="Skärmavbild 2021-11-18 kl  16 10 57" src="https://user-images.githubusercontent.com/85236391/142442221-5b4dcc25-db7e-418b-9395-ba78a6deafb4.png">
+<img width="908" alt="Skärmavbild 2021-11-18 kl  16 09 49" src="https://user-images.githubusercontent.com/85236391/142442239-540537e8-5385-46a1-9284-0caa9d79e611.png">
 
 
 ### Different Screen Size
