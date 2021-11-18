@@ -117,9 +117,7 @@
                                              <!-- User button -->
                                             <a href="{% url 'delete-appointment' app.id %}" class="btn btn-danger">CANCEL APPOINTMENT</a>
                                         </div>
-                                    </div>    
-                                    
-        
+                                    </div>
                                     <!-- Info after appointment is accepted for User  -->                                    
                                     <p class="user-info1">* If you would like to change your booking please cancel it then apply for a new appointment.</p>
                                     <p class="user-info2">* Please be aware you will need to cancel 24 hours prior to your appointment to not be charged.</p>
@@ -135,7 +133,7 @@
         {% endfor %}
     </div>    
 </div>
-<!-- Pageination on the button of the page  -->  
+<!-- Pageination on the bottom of the page  -->  
 {% if is_paginated %}
     <div class="page-wrapper">
         <nav aria-label="step-links">
