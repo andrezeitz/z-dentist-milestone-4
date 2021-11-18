@@ -107,12 +107,21 @@ The website has the following features:
 ### Navigation bar
 Navigation bar is visible on the top of the website with a logo that is clickable to update the site. When someone is logged in the navigation bar will change so the user can see there username and a logout button om the right top side. The registration and login links will also disappear once logged in. The navigation links will collapse on smaller screens.
 
+<img width="1027" alt="Skärmavbild 2021-11-18 kl  13 39 44" src="https://user-images.githubusercontent.com/85236391/142416940-acc9583c-7e93-46f3-b3b1-644d43017151.png">
+
+<img width="1028" alt="Skärmavbild 2021-11-18 kl  13 38 19" src="https://user-images.githubusercontent.com/85236391/142416975-2d757a4f-4bf0-4b4c-8524-5d179f0935b0.png">
+
 ### Home
-The home page contains a big hero picture with a "Book an Appointment" button on it.
+The home page contains a big hero picture with a "Book an Appointment" button on it. On smaller screen the button will be under the hero picture to fit better.
 It also have information about the company like how the work and how focus on quality is very important.
+
+<img width="1014" alt="Skärmavbild 2021-11-18 kl  13 42 14" src="https://user-images.githubusercontent.com/85236391/142417326-b4df74de-857b-4135-b8f2-6ffd7db89341.png">
+<img width="1012" alt="Skärmavbild 2021-11-18 kl  13 42 28" src="https://user-images.githubusercontent.com/85236391/142417337-dbe555df-268c-4bf9-a22b-2f31a0e82466.png">
 
 ### Services
 The service page contains a table with all the treatments the company is doing and price information about each service.
+
+<img width="1013" alt="Skärmavbild 2021-11-18 kl  13 43 54" src="https://user-images.githubusercontent.com/85236391/142417581-9b7a0caa-1f74-429d-8809-bef6e1b868cc.png">
 
 ### Contact us
 The contact page has a large google maps window to show the customer where the dentist company is located. After that it's a contact box with the address, phone number and email of the company. Last there is a contact form where the customer can enter there name, email and a message to be able to contact the company with any questions. After the message is sent it will show a success message so the customer know we have received the email.
@@ -126,17 +135,32 @@ This page is only visible if you are logged in as a user or admin.
 #### User
 If you are logged in as a user and make an appointment your bookings will be showed here. First it will just show your information and a message that the booking is still not confirmed. Once the admin confirm the appointment the card will change and instead show the confirmed date with time and also a delete button to let the customer cancel there appointment up to 24 hours prior to the appointment. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then disappear from the manage site.
 
+<img width="1186" alt="Skärmavbild 2021-11-18 kl  14 00 06" src="https://user-images.githubusercontent.com/85236391/142419956-b7219b49-981c-4dc0-b719-ace7606f30c0.png">
+
 #### Admin
-If you are logged in as a Admin, this page will show you all the bookings that have been made and information on all customers. In the navigation bar it will show a notice clock and a number for how many bookings that haven't been accepted yet. The admin can then see the desired date the customer would like for there appointment and confirm it with date and time. Once the admin press the "Accept" button an email will be sent to the customer confirming the appointment with date and time. The user card will then show a button where the admin can change the already approved date. When clicked a collapsible div will open up with the date time input and a button saying "Accept New Appointment". After the date is changed a new email will be sent to both the user and the admin. Last the admin will have a delete button to be able to delete a booking. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then be deleted from the database.
+If you are logged in as a Admin, this page will show you all the bookings that have been made and information on all customers. In the navigation bar it will show a notice clock and a number for how many bookings that haven't been accepted yet.
 
-### Registration
-This link is visible in the top right corner of the navigation bar if there is no user logged in to the page. If user is already logged in it will be hidden.
+<img width="687" alt="Skärmavbild 2021-11-18 kl  13 58 33" src="https://user-images.githubusercontent.com/85236391/142419723-3e5f286b-af47-4336-9d74-36265183cd45.png">
 
-### Login/Logout
-Login and logout link is placed in the top right corner and will change if the user is logged in or not.
+The admin can then see the desired date the customer would like for there appointment and confirm it with date and time. Once the admin press the "Accept" button an email will be sent to the customer confirming the appointment with date and time. The user card will then show a button where the admin can change the already approved date. When clicked a collapsible div will open up with the date time input and a button saying "Accept New Appointment". After the date is changed a new email will be sent to both the user and the admin. Last the admin will have a delete button to be able to delete a booking. If the booking is deleted an email will be sent out to both the customer and Admin confirming the appointment is canceled. The booking will then be deleted from the database.
+
+<img width="1171" alt="Skärmavbild 2021-11-18 kl  13 57 01" src="https://user-images.githubusercontent.com/85236391/142419510-88816f60-bcea-4d7f-8c48-d6cc027695d7.png">
+
+
+### Registration/Login
+This links are visible in the top right corner of the navigation bar if there is no user logged in to the page.
+
+<img width="222" alt="Skärmavbild 2021-11-18 kl  13 47 48" src="https://user-images.githubusercontent.com/85236391/142418132-4b2dc575-9f4f-4eab-b16d-9afbfa609b70.png">
+
+### User/Logout
+The user that is logged in to the site will be visable in the top right corner and under it will be a log out link.
+
+<img width="111" alt="Skärmavbild 2021-11-18 kl  13 49 52" src="https://user-images.githubusercontent.com/85236391/142418482-7055a07f-fd32-432f-9087-969d9ee49488.png">
 
 ### Footer
 The footer contains the opening hours and contact information about the company.
+
+<img width="1012" alt="Skärmavbild 2021-11-18 kl  13 45 39" src="https://user-images.githubusercontent.com/85236391/142417843-ede403c0-2ea3-4256-8697-ee7c0920786e.png">
 
 ## Testing
 
