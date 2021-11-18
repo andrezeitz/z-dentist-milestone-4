@@ -41,3 +41,6 @@ class Appointment(models.Model):
     def __str__(self):
         ret = self.first_name + ',' + self.last_name + ',' + self.email
         return ret
+
+    class Meta:
+        ordering = ["-sent_date"]

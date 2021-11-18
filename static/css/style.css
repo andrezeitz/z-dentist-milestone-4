@@ -357,7 +357,6 @@ table tr > th {
     padding: 5px;
 }
 
-
 .user-info1 {
     margin-top: 1rem;
     font-size: 12px;
@@ -366,6 +365,11 @@ table tr > th {
 .user-info2 {
     margin-bottom: 0;
     font-size: 12px;
+}
+
+.fa-check-circle {
+    color: #198754;
+    font-size: 19px;
 }
 
 /* Pagination */

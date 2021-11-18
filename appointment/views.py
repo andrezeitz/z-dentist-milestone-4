@@ -85,7 +85,7 @@ class ManageAppointmentTemplateView(ListView):
         Function that make the user only see there bookings.
         """
         if self.request.user.is_superuser:
-            return Appointment.objects.all().order_by('-sent_date')
+            return Appointment.objects.all()
         else:
             return Appointment.objects.filter(user=self.request.user)
 

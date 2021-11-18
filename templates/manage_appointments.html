@@ -85,7 +85,7 @@
                                     {% if request.user.is_superuser %}
                                     {% if app.accepted %}
                                     <div class="confirmation">
-                                        <h6>Confirmed Appointment Date</h6>
+                                        <h6><i class="far fa-check-circle"></i> Confirmed Appointment Date</h6>
                                         <p>{{app.accepted_date}}</p>
                                     </div>                            
                                     <!-- Admin buttons  -->
@@ -112,7 +112,7 @@
                                     {% if app.accepted %}
                                     <div class="confirmation">
                                         <div class="card card-body">
-                                            <h6>Confirmed Appointment Date</h6>
+                                            <h6><i class="far fa-check-circle"></i> Confirmed Appointment Date</h6>
                                             <p>{{app.accepted_date}}</p>                            
                                              <!-- User button -->
                                             <a href="{% url 'delete-appointment' app.id %}" class="btn btn-danger">CANCEL APPOINTMENT</a>
