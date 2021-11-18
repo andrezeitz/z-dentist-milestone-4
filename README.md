@@ -191,26 +191,38 @@ The footer contains the opening hours and contact information about the company.
 9. As a user, I want to get an email to show me my contact email was receive and what my messages was.
 * Result: TEST PASSED
 
-10. As a site admin, I want to be able to manage appointment
+10. As a user, I want to see a success message after I make an appointment or cancel an appointment.
 * Result: TEST PASSED
 
-11. As a site admin, I want to be able to confirm appointment times and send out confirmation email to the customer.
+11. As a site admin, I want to be able to manage appointment
 * Result: TEST PASSED
 
-12. As a site admin, I want to be able to delete appointments and send out confirmation email to the customer about the cancellation
+12. As a site admin, I want to be able to confirm appointment times and send out confirmation email to the customer.
 * Result: TEST PASSED
 
-13. As a site admin, I want to be able to receive email when new bookings is being made.
+13. As a site admin, I want to be able to delete appointments and send out confirmation email to the customer about the cancellation
 * Result: TEST PASSED
 
-14. As a site admin, I want to be able to receive email when someone is contacting us from the contact page.
+14. As a site admin, I want to be able to receive email when new bookings is being made.
 * Result: TEST PASSED
 
-15. As a site admin, I want to be able to change the appointment time without to cancel the booking.
+15. As a site admin, I want to be able to receive email when someone is contacting us from the contact page.
 * Result: TEST PASSED
 
-16. As a site admin, I want to see how many bookings still havent been accepted with a date yet.
-* Result: TEST PASSED 
+16. As a site admin, I want to be able to change the appointment time without canceling the booking.
+* Result: TEST PASSED
+
+17. As a site admin, I want to see how many bookings still havent been accepted with a date yet.
+* Result: TEST PASSED
+
+18. As a site admin, I want to check all the fields in the appointment form that say required really is required.
+* Result: TEST PASSED
+
+19. As a site admin, I want all the fields in contact-us to be required so users cant send an empty mail.
+* Result: TEST PASSED
+
+20. As a site admin, I want to see a success message when I accept an appointment or delete an appointment
+* Result: TEST PASSED
 
 ### Code Validation
 
