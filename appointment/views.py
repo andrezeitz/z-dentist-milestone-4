@@ -1,5 +1,4 @@
 from django.http.response import HttpResponseRedirect
-# from django.views.generic import View
 from django.views.generic.base import TemplateView
 from django.contrib import messages
 from django.views.generic import ListView
