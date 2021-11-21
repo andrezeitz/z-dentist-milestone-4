@@ -1,7 +1,4 @@
-from django.test import TestCase, Client
-from .models import Appointment
-from django.contrib.auth.models import User, Group
-from django.urls import reverse
+from django.test import TestCase
 
 
 # Create your tests here.
@@ -35,6 +32,11 @@ class MainPagesTestCase(TestCase):
         self.assertTemplateUsed(response, "contact_us.html")
         self.assertTemplateUsed(response, "base.html")
 
+    def test_manage_appointment(self):
+        # if user try to enter page not logged in will be redicrect to login
+        response = self.client.get('/manage-appointment')
+        self.assertEqual(response.status_code, 301)
+
 
 class UserTests(TestCase):
     """
@@ -48,10 +50,8 @@ class UserTests(TestCase):
     def test_login_page_load(self):
         response = self.client.get('/accounts/login/')
         self.assertEqual(response.status_code, 200)
-    
+
     # if user try to enter page not logged in will be redicrect to index page
     def test_logout_page_load(self):
         response = self.client.get('/accounts/logout/')
         self.assertEqual(response.status_code, 302)
-
-
