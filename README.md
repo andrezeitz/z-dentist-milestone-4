@@ -224,6 +224,8 @@ The footer contains the opening hours and contact information about the company.
 20. As a site admin, I want to see a success message when I accept an appointment or delete an appointment
 * Result: TEST PASSED
 
+I also did some automatic testing, you can find them [here](https://github.com/andrezeitz/z_dentist/blob/main/appointment/tests.py) and [here](https://github.com/andrezeitz/z_dentist/blob/main/emailer/tests.py)
+
 ### Code Validation
 
 ### HTML
