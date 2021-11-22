@@ -85,15 +85,16 @@ The colors chosen are:
 * Python
 
 ### Frameworks and Tools
-* GitHub
-* Gitpod
-* Django
-* Heroku
-* Postgres
-* Google Fonts
+* [GitHub](https://github.com/)
+* [Gitpod](https://www.gitpod.io/)
+* [Django](https://www.djangoproject.com/)
+* [Heroku](https://www.heroku.com/home)
+* [Postgres](https://www.postgresql.org/)
+* [Google Fonts](https://fonts.google.com/)
 * [Font Awesome](https://fontawesome.com/)
 * [W3C HTML Validation](https://validator.w3.org/)
 * [H3C CSS Validation](https://jigsaw.w3.org/css-validator/validator.html.en)
+* [http://pep8online.com/](http://pep8online.com/)
 * [Am I responsive](http://ami.responsivedesign.is/)
 * [WebAim](https://webaim.org/resources/contrastchecker/)
 
@@ -126,8 +127,12 @@ The service page contains a table with all the treatments the company is doing a
 ### Contact us
 The contact page has a large google maps window to show the customer where the dentist company is located. After that it's a contact box with the address, phone number and email of the company. Last there is a contact form where the customer can enter there name, email and a message to be able to contact the company with any questions. After the message is sent it will show a success message so the customer know we have received the email.
 
+![Skärmavbild 2021-11-18 kl  17 06 43](https://user-images.githubusercontent.com/85236391/142859608-0a1d5ebb-ae87-4cc5-a283-6a7436f4395f.png)
+
 ### Appointment
 On the appointment page the customer will be able to make a booking within the form. Here the user have two choices. Either they can be logged in to the site and will then be able to manage there booking after. If they dont want to register it works fine to make an appointment as well. They will then put in the required  information, then they can choose from a list what kind of treatment they would like to book with price information. After that they can choose a desired date for there appointment. Finally there is a field that is not required, but they can enter any additional information they would like. As soon as they make the reservation there will be a success message telling them the appointment have been sent to the dentist.
+
+![Skärmavbild 2021-11-18 kl  17 07 03](https://user-images.githubusercontent.com/85236391/142859568-85a359b2-04d3-4c74-a1a1-c59e210016a8.png)
 
 ### Manage
 This page is only visible if you are logged in as a user or admin.
@@ -260,7 +265,6 @@ The PEP8 Online Check was used to validate all Python code. No errors or warning
 <img width="925" alt="Skärmavbild 2021-11-18 kl  16 10 16" src="https://user-images.githubusercontent.com/85236391/142442192-0c8b6532-aaf8-4e37-8e3f-d1b8a61575ba.png">
 <img width="916" alt="Skärmavbild 2021-11-18 kl  16 10 57" src="https://user-images.githubusercontent.com/85236391/142442221-5b4dcc25-db7e-418b-9395-ba78a6deafb4.png">
 <img width="908" alt="Skärmavbild 2021-11-18 kl  16 09 49" src="https://user-images.githubusercontent.com/85236391/142442239-540537e8-5385-46a1-9284-0caa9d79e611.png">
-
 
 ### Different Screen Size
 The site is optimized for all screen sizes and tested with a Macbook Pro 13" and iPhone 13 Pro.
